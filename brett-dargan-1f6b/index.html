@@ -251,12 +251,13 @@
   footer .logo{display:block;margin-bottom:6px}
   .note{font-size:13px;color:var(--muted);margin-top:12px}
 </style>
+<link rel="stylesheet" href="../assets/theme.css">
 </head>
 <body>
 
 <div class="bar"><div class="wrap">
   <img class="navlogo" src="../assets/grp.png" alt="LCMB Group">
-  <nav><a href="#system">System</a><a href="#app">SEMS+ app</a><a href="#options">Options</a><a href="#blackout">Blackout calculator</a><a href="#team">Team</a><a href="#faq">Questions</a></nav>
+  <nav><a href="#system">System</a><a href="#app">SEMS+ app</a><a href="#options">Options</a><a href="#blackout">Blackout calculator</a><a href="#team">Team</a><a href="#reviews">Reviews</a><a href="#faq">Questions</a></nav>
   <a class="btn" href="#accept">Accept proposal</a>
 </div></div>
 
@@ -264,6 +265,8 @@
   <img src="../assets/grp_white.png" alt="LCMB Group" class="herofull"><div class="eyebrow" style="margin:-14px 0 0">ELECTRICAL &nbsp;|&nbsp; AIR CONDITIONING &nbsp;|&nbsp; SOLAR + BATTERIES</div>
   <h1>Your battery and<br>whole-home backup proposal</h1>
   <p>Brett, here are two GoodWe battery options sized for your 12.98 kW solar system, to cover your evening peak and shoulder use and bring your solar and battery onto one hybrid inverter.</p>
+  <a class="grate" href="https://search.google.com/local/reviews?placeid=ChIJhfSCf9sDkWsRmFoEpLR64SE" target="_blank" rel="noopener"><span class="g"><svg width="14" height="14" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg></span><span class="stars">★★★★★</span> 4.9 from 460+ Google reviews</a>
+  <div class="chips"><span>Locally owned &amp; owner-run</span><span>No subcontractors</span><span>10-year workmanship warranty</span><span>SAA-accredited installers</span></div>
   <div class="meta">
     <div><b>PREPARED FOR</b>Brett Dargan · 42/116 Delavan Street, Wishart QLD 4122</div>
     <div><b>PREPARED BY</b>Luke Muir, Director</div>
@@ -275,7 +278,12 @@
 
 <!-- your home -->
 <section class="lift"><div class="wrap">
-  <div class="card facts">
+  <div class="card owner">
+    <img src="../assets/luke.png" alt="Luke Muir">
+    <div><b>Locally owned. Owner-run.</b><span>LCMB Group is a local business run by Luke Muir, not a franchise or a call centre. Call Luke directly any time.</span></div>
+    <a class="btn call" href="tel:0483927024">Call Luke · 0483 927 024</a>
+  </div>
+  <div class="card facts" style="margin-top:16px">
     <div class="fact"><div class="n">~12.98kW</div><div class="l">Existing solar on two Fronius GEN24 inverters</div></div>
     <div class="fact"><div class="n">~$180</div><div class="l">Typical monthly bill (September came in at about $260)</div></div>
     <div class="fact"><div class="n">1-phase</div><div class="l">Single-phase supply</div></div>
@@ -422,6 +430,14 @@
 <div hidden><div id="addons"></div><div id="tot"></div><div id="totNote"></div></div>
 <p class="note wrap" style="margin-top:0">Prefer to spread the cost? Ask us about paying with Brighte finance.</p>
 
+<!-- crew band -->
+<section class="band"><div class="wrap">
+  <p class="kicker" style="color:#FFDF7E">Local · Owner-run · Our own crew</p>
+  <h2>Our own crew. On your roof.</h2>
+  <p>The team that quotes your job is the team that installs it. No subcontractors, no strangers, just licensed LCMB Group electricians who take pride in a tidy install.</p>
+  <div class="pills"><span><b>✓</b> Locally owned &amp; operated</span><span><b>✓</b> Licensed electricians</span><span><b>✓</b> Same crew, start to finish</span><span><b>✓</b> Tidy, safe installs</span></div>
+</div></section>
+
 <!-- team -->
 <section id="team" style="padding-top:10px"><div class="wrap">
   <p class="kicker">Meet the team</p>
@@ -459,6 +475,39 @@
   </div>
 </div></section>
 
+<!-- recent installs -->
+<section style="padding-top:10px"><div class="wrap">
+  <p class="kicker">Our work</p>
+  <h2>Recent LCMB Group installs</h2>
+  <div class="gallery">
+    <figure><img src="../assets/photos/install-1.jpg" alt="LCMB Group solar install"><figcaption>Neat, straight panel rows</figcaption></figure>
+    <figure><img src="../assets/photos/install-2.jpg" alt="LCMB Group solar install"><figcaption>Tidy rail work</figcaption></figure>
+    <figure><img src="../assets/photos/install-3.jpg" alt="Aerial view of an LCMB Group solar install"><figcaption>From the air</figcaption></figure>
+    <figure><img src="../assets/photos/install-4.jpg" alt="LCMB Group solar install"><figcaption>Finished and switched on</figcaption></figure>
+  </div>
+</div></section>
+
+<!-- google reviews -->
+<section id="reviews" style="padding-top:10px"><div class="wrap">
+  <p class="kicker">Google reviews</p>
+  <h2>Don't just take our word for it</h2>
+  <div class="rv-wrap">
+    <div class="card rv-score">
+      <div class="big">4.9</div>
+      <div class="stars">★★★★★</div>
+      <p>from 460+ Google reviews.<br>450 of them are five stars.</p>
+      <a class="btn" href="https://search.google.com/local/reviews?placeid=ChIJhfSCf9sDkWsRmFoEpLR64SE" target="_blank" rel="noopener">Read them all on Google</a>
+      <div class="gl"><svg width="14" height="14" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg> Verified Google reviews</div>
+    </div>
+    <div class="rv-list">
+      <div class="card review"><div class="stars">★★★★★</div><p>Luke, Harry and the team installed my roof top panels and a large battery on Monday morning. They arrived on time, didn't muck around and completed the job by 1pm. No mess and no hassles. Highly recommended.</p><div class="who"><i>A</i><div><b>Andrew C.</b><small>Solar + battery</small></div></div></div>
+      <div class="card review"><div class="stars">★★★★★</div><p>Guys installed battery, did a great job. Knew what they were doing. Quality install. Cleaned up the mess. Shout out to Will and Mack.</p><div class="who"><i>M</i><div><b>Mark A.</b><small>Battery install</small></div></div></div>
+      <div class="card review"><div class="stars">★★★★★</div><p>Professional from start to finish… Luke and his team simplified the jargon, turned up on time, kept me informed throughout the installation and stayed til the job was done. They then followed up afterwards to make sure I was happy.</p><div class="who"><i>R</i><div><b>Robert R.</b><small>Ducted air, solar + batteries</small></div></div></div>
+      <div class="card review"><div class="stars">★★★★★</div><p>Luke and his team installed solar and battery at our home. This company are very easy to deal with and super responsive to questions… We love our new solar system and we would recommend LCMB for all your solar and electricity needs.</p><div class="who"><i>A</i><div><b>Alison G.</b><small>Solar + battery</small></div></div></div>
+    </div>
+  </div>
+</div></section>
+
 <!-- next steps -->
 <section style="padding-top:10px"><div class="wrap">
   <p class="kicker">What happens next</p>
@@ -476,7 +525,7 @@
   <p class="kicker">Questions</p>
   <h2>Good to know</h2>
   <div class="card" style="margin-top:20px">
-    <details open><summary>What does "full-home backup" actually mean?</summary><p>During a blackout, your household circuits can stay connected to the battery automatically, subject to your switchboard. That doesn\'t mean every high-load appliance can run at the same time, so air conditioning, ovens, hot water and pool equipment may still need to be managed.</p></details>
+    <details open><summary>What does "full-home backup" actually mean?</summary><p>During a blackout, your household circuits can stay connected to the battery automatically, subject to your switchboard. That doesn't mean every high-load appliance can run at the same time, so air conditioning, ovens, hot water and pool equipment may still need to be managed.</p></details>
     <details><summary>Are the rebates already included?</summary><p>Yes. Both prices already have the applicable rebates taken off. Final eligibility is confirmed as part of the approval process.</p></details>
     <details><summary>Why is the price "preliminary"?</summary><p>Pricing is subject to a site inspection, the switchboard, network approval and rebate eligibility. If anything changes, you'll know before we go ahead.</p></details>
     <details><summary>What happens to my existing solar panels?</summary><p>Both Fronius GEN24 inverters are removed and your existing panels are reconfigured onto the new GoodWe hybrid inverter, subject to inspection and testing on site.</p></details>
@@ -520,9 +569,9 @@
     <div class="done" id="done">
       <div class="tick"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
       <h2 style="font-size:26px">Thanks, <span id="dName"></span>!</h2>
-      <p class="lead" style="margin:0 auto 18px">Send this confirmation to Luke and he'll be in touch to book your site inspection.</p>
+      <p class="lead" style="margin:0 auto 18px" id="doneLead">Luke has your acceptance and will be in touch shortly to book your site inspection.</p>
       <div class="card" style="max-width:520px;margin:0 auto;text-align:left;padding:18px 20px;font-size:14.5px;white-space:pre-line" id="conf"></div>
-      <div style="display:flex;gap:10px;justify-content:center;margin-top:18px;flex-wrap:wrap">
+      <div style="display:none;gap:10px;justify-content:center;margin-top:18px;flex-wrap:wrap" id="doneBtns">
         <button class="btn" id="copy">Copy confirmation</button>
         <a class="btn ghost" id="mail" href="#">Email it to Luke</a>
       </div>
@@ -541,7 +590,7 @@
   </div>
 </div></section>
 
-<footer><img src="../assets/grp.png" alt="LCMB Group" style="height:60px;margin-bottom:12px"><br>Gold Coast · Brisbane · NSW · www.lcmbgroup.com.au</footer>
+<footer><img src="../assets/grp_white.png" alt="LCMB Group" style="height:60px;margin-bottom:12px"><br>Gold Coast · Brisbane · NSW · www.lcmbgroup.com.au</footer>
 
 <script>
 const OPTS={
@@ -626,11 +675,24 @@ $("#go").onclick=e=>{
   const txt=`Proposal accepted – 42/116 Delavan Street, Wishart\nName: ${nm}${ph?"\nPhone: "+ph:""}\nDate: ${d}\nSystem: Option ${cur} – ${o.cap} – ${fmt(o.price)}\nExtras: ${ex.length?ex.map(a=>a.t).join(", "):"None"}\nEstimated total: ${$("#sTot").textContent} (inc GST, after rebates)\nPlease book my site inspection.`;
   $("#conf").textContent=txt; $("#dName").textContent=nm.split(" ")[0];
   $("#mail").href="mailto:admin@lcmbgroup.com.au?subject="+encodeURIComponent("Proposal accepted – 42/116 Delavan Street")+"&body="+encodeURIComponent(txt);
-  $("#acceptForm").style.display="none"; $("#done").style.display="block";
-  $("#done").scrollIntoView({behavior:"smooth",block:"center"});
+  const btn=$("#go"); if(btn.disabled) return; btn.disabled=true; btn.textContent="Sending…";
+  const payload={customer:document.title.replace(/^.*proposal for /i,""),name:nm,phone:ph,
+    address:txt.split("\n")[0].replace(/^Proposal accepted – /,""),option:`Option ${cur} – ${o.cap}`,price:fmt(o.price),
+    extras:ex.length?ex.map(a=>a.t+(a.p?` (${fmt(a.p)})`:" (TBC)")).join(", "):"None",
+    total:$("#sTot").textContent+" inc GST, after rebates",page:location.href.split("#")[0].split("?")[0]};
+  (window.lcmbSendAccept?window.lcmbSendAccept(payload):Promise.resolve(false)).then(ok=>{
+    $("#doneLead").textContent=ok?"Luke has your acceptance and will be in touch shortly to book your site inspection."
+      :"Nearly done. Please tap “Email it to Luke” below so he gets your acceptance, or call him on 0483 927 024.";
+    $("#doneBtns").style.display=ok?"none":"flex";
+    $("#acceptForm").style.display="none"; $("#done").style.display="block";
+    $("#done").scrollIntoView({behavior:"smooth",block:"center"});
+  });
 };
 $("#copy").onclick=async()=>{ try{ await navigator.clipboard.writeText($("#conf").textContent); $("#copy").textContent="Copied ✓"; }catch(e){ $("#copy").textContent="Select the text above to copy"; } };
 renderApps(); renderAddons(); setOpt(1);
 </script>
+<script src="../assets/accept.js"></script>
+<script src="../assets/track.js"></script>
+<script src="../assets/fx.js"></script>
 </body>
 </html>
