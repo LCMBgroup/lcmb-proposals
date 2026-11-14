@@ -158,3 +158,37 @@ h2{display:block;width:fit-content}
 table.cmp th.sel{background:var(--sky);color:#fff}
 .band + section{padding-top:56px !important}
 .note.wrap{padding-top:14px;padding-bottom:14px}
+
+/* ---------- Google reviews ---------- */
+.grate{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:#fff;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:7px 14px 7px 8px;font:700 13px Inter;transition:transform .25s var(--pop)}
+.grate:hover{transform:translateY(-2px) scale(1.03)}
+.grate .g{width:24px;height:24px;border-radius:50%;background:#fff;display:grid;place-items:center}
+.stars{color:var(--sun);letter-spacing:1px}
+.rv-wrap{display:grid;grid-template-columns:300px 1fr;gap:18px;margin-top:22px;align-items:start}
+.rv-score{padding:28px 26px;text-align:center;background:linear-gradient(160deg,var(--brand),#0F2347);color:#fff;position:sticky;top:84px}
+.rv-score .big{font:800 64px Montserrat,Inter,sans-serif;line-height:1;color:var(--sun-2)}
+.rv-score .stars{font-size:24px;margin:8px 0 6px}
+.rv-score p{margin:0 0 18px;opacity:.85;font-size:14.5px}
+.rv-score .btn{background:#fff;color:var(--brand);box-shadow:none;width:100%;justify-content:center}
+.rv-score .gl{display:flex;align-items:center;justify-content:center;gap:8px;font-size:12px;opacity:.75;margin-top:12px}
+.rv-list{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.review{padding:22px 22px 20px;position:relative}
+.review::before{content:"\201C";position:absolute;right:18px;top:4px;font:800 64px Montserrat,serif;color:var(--brand-soft);line-height:1}
+.review .stars{font-size:15px}
+.review p{margin:10px 0 14px;font-size:14.5px;color:#2a2f45}
+.review .who{display:flex;align-items:center;gap:10px;font-size:13.5px}
+.review .who i{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font:800 14px Montserrat,Inter,sans-serif;color:#fff;font-style:normal;background:linear-gradient(135deg,var(--sky),var(--brand))}
+.review:nth-child(2) .who i{background:linear-gradient(135deg,var(--sun),#FFAA1F);color:var(--brand-ink)}
+.review:nth-child(3) .who i{background:linear-gradient(135deg,#7BE8C0,#12A473)}
+.review:nth-child(4) .who i{background:linear-gradient(135deg,#FF9F80,#E8613C)}
+.review .who small{display:block;color:var(--muted);font-size:12px}
+@media(max-width:860px){.rv-wrap{grid-template-columns:1fr}.rv-score{position:static}.rv-list{grid-template-columns:1fr}}
+
+/* ---------- owner-run strip ---------- */
+.owner{display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:center;padding:24px 28px;margin-top:-30px;position:relative;z-index:2;background:#fff}
+.owner img{width:76px;height:76px;border-radius:50%;box-shadow:0 0 0 4px #fff,0 0 0 7px var(--sun)}
+.owner b{display:block;font:800 19px Montserrat,Inter,sans-serif;color:var(--brand)}
+.owner span{color:var(--muted);font-size:14.5px}
+.owner .call{white-space:nowrap}
+@media(max-width:760px){.owner{grid-template-columns:auto 1fr}.owner .call{grid-column:span 2;justify-content:center}}
+.hero .grate{margin-top:22px}
