@@ -1,0 +1,160 @@
+/* LCMB Group proposal theme: brighter, bouncier, more branded.
+   Loaded after each page's own styles, so it overrides them for every proposal. */
+:root{
+  --brand:#1B3664; --brand-2:#1E6FD9; --brand-ink:#0F2347;
+  --sky:#1E7BE0; --sky-2:#4FA8FF; --sun:#FFC23D; --sun-2:#FFDF7E; --mint:#2FD69B;
+  --brand-soft:#E8F1FD; --bg:#F4F8FD;
+  --pop:cubic-bezier(.34,1.56,.64,1);
+}
+body{background:var(--bg)}
+
+/* ---------- top bar ---------- */
+.bar{background:rgba(255,255,255,.95);border-bottom:0;box-shadow:0 2px 18px rgba(15,35,71,.08)}
+.bar::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:3px;background:linear-gradient(90deg,var(--brand) 0 40%,var(--sky) 40% 75%,var(--sun) 75%)}
+.btn{background:linear-gradient(135deg,var(--sky),var(--brand));box-shadow:0 6px 16px rgba(30,123,224,.28);transition:transform .25s var(--pop),box-shadow .2s}
+.btn:hover{background:linear-gradient(135deg,var(--sky-2),var(--sky));transform:translateY(-2px) scale(1.03);box-shadow:0 10px 22px rgba(30,123,224,.35)}
+.bar .btn,#go{background:linear-gradient(135deg,var(--sun),#FFAA1F);color:var(--brand-ink);font-weight:700;box-shadow:0 6px 18px rgba(255,170,31,.4)}
+.bar .btn:hover,#go:hover{background:linear-gradient(135deg,var(--sun-2),var(--sun))}
+.btn.ghost{background:#fff;color:var(--brand);box-shadow:none}
+
+/* ---------- hero with real install photo ---------- */
+.hero{background:
+  linear-gradient(100deg,rgba(15,35,71,.96) 0%,rgba(27,54,100,.88) 42%,rgba(30,111,217,.55) 75%,rgba(30,123,224,.25) 100%),
+  url(photos/hero.jpg) center 40%/cover no-repeat;
+  padding:74px 0 140px}
+.hero::after{content:"";position:absolute;right:-6%;bottom:-1px;width:58%;height:120px;background:var(--bg);clip-path:polygon(22% 100%,100% 0,100% 100%);z-index:0}
+.hero::before{content:"";position:absolute;left:-10%;bottom:-1px;width:70%;height:64px;background:var(--sun);clip-path:polygon(0 100%,100% 100%,92% 55%,0 85%);opacity:.95;z-index:0}
+.hero .watermark{opacity:.07}
+.hero h1{text-shadow:0 2px 24px rgba(0,0,0,.25)}
+.hero h1 .hi,.hero .hl{color:var(--sun)}
+.hero .eyebrow{color:var(--sun-2);opacity:1}
+.hero .meta>div{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(6px);border-radius:14px;padding:10px 14px}
+.hero .meta b{color:var(--sun-2);opacity:1}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.chips span{font:700 12.5px Inter;letter-spacing:.02em;padding:7px 12px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25)}
+.chips span:nth-child(1){background:var(--sun);color:var(--brand-ink);border-color:var(--sun)}
+
+/* ---------- cards, headings, bounce ---------- */
+.card{border:0;border-radius:22px;box-shadow:0 2px 4px rgba(15,35,71,.04),0 14px 36px rgba(15,35,71,.08);transition:transform .35s var(--pop),box-shadow .3s}
+.goal,.member,.step,.addon{transition:transform .35s var(--pop),box-shadow .3s}
+.goal:hover,.member:hover,.step:hover,.addon:hover{transform:translateY(-6px) rotate(-.4deg);box-shadow:0 22px 44px rgba(15,35,71,.14)}
+.kicker{color:var(--sky);display:inline-flex;align-items:center;gap:8px}
+.kicker::before{content:"";width:22px;height:4px;border-radius:4px;background:linear-gradient(90deg,var(--sun),#FFAA1F)}
+h2{position:relative;display:inline-block}
+h2::after{content:"";position:absolute;left:0;bottom:-6px;width:56px;height:5px;border-radius:5px;background:linear-gradient(90deg,var(--sky),var(--mint))}
+.done h2::after,.calc h2::after{display:none}
+.lead{margin-top:14px}
+
+/* facts: coloured numbers */
+.facts{border-top:5px solid transparent;border-image:linear-gradient(90deg,var(--brand),var(--sky),var(--sun)) 1}
+.fact:nth-child(1) .n{color:var(--brand)}
+.fact:nth-child(2) .n{color:var(--sky)}
+.fact:nth-child(3) .n{color:#E39400}
+.fact:nth-child(4) .n{color:#12A473}
+.goal .ic{background:linear-gradient(135deg,var(--sun-2),var(--sun))}
+.goal:nth-child(2) .ic{background:linear-gradient(135deg,#BFE3FF,var(--sky-2))}
+.goal:nth-child(3) .ic{background:linear-gradient(135deg,#BDF5DE,var(--mint))}
+.goal:nth-child(4) .ic{background:linear-gradient(135deg,#FFD1C2,#FF8A65)}
+
+/* options */
+.seg{box-shadow:0 6px 18px rgba(15,35,71,.08);border:0}
+.seg button{transition:transform .25s var(--pop),background .2s}
+.seg button.on{background:linear-gradient(135deg,var(--sky),var(--brand));box-shadow:0 6px 14px rgba(30,123,224,.35);transform:scale(1.04)}
+.opt .left{background:
+  radial-gradient(420px 260px at 110% -10%,rgba(79,168,255,.55),transparent 60%),
+  radial-gradient(300px 200px at -10% 110%,rgba(255,194,61,.35),transparent 60%),
+  linear-gradient(160deg,var(--brand) 0%,#0F2347 100%)}
+.opt .left .tag{background:var(--sun);color:var(--brand-ink)}
+.price{background:linear-gradient(90deg,#fff,var(--sun-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.cell::after{background:linear-gradient(0deg,var(--mint),#9BF5D2)}
+.cell:not(.off){animation:charge 2.4s ease-in-out infinite}
+.cell:nth-child(3){animation-delay:.2s}.cell:nth-child(4){animation-delay:.4s}.cell:nth-child(5){animation-delay:.6s}
+@keyframes charge{0%,100%{box-shadow:0 0 0 rgba(47,214,155,0)}50%{box-shadow:0 0 18px rgba(47,214,155,.55)}}
+.chk{background:linear-gradient(135deg,#BDF5DE,var(--mint))}
+.fit{background:linear-gradient(135deg,#FFF6DD,#FFEFC2);color:#5a4300;border-left:4px solid var(--sun)}
+table.cmp .sel{background:#E8F1FD}
+table.cmp th{background:var(--brand);color:#fff}
+table.cmp tr:last-child td{color:var(--brand);font-size:16px}
+
+/* blackout calculator */
+#blackout{background:linear-gradient(180deg,#fff,var(--brand-soft)) !important}
+.app{transition:transform .25s var(--pop),background .2s,border-color .2s}
+.app:hover{transform:translateY(-2px)}
+.app.on{border-color:var(--sky);background:#E8F1FD;transform:scale(1.02)}
+.app.on .box{background:var(--sky);border-color:var(--sky)}
+.calc .out{background:
+  radial-gradient(340px 220px at 100% 0%,rgba(30,123,224,.55),transparent 65%),
+  radial-gradient(260px 200px at 0% 100%,rgba(255,194,61,.22),transparent 60%),#0F1B33}
+.hours{color:var(--sun-2)}
+.gauge i{background:linear-gradient(90deg,var(--mint),var(--sun))}
+
+/* team */
+.member .av{background:linear-gradient(150deg,var(--sky),var(--brand))}
+.member:nth-child(1) .av{box-shadow:0 0 0 4px #fff,0 0 0 7px var(--sun)}
+.member .av{box-shadow:0 0 0 4px #fff,0 0 0 7px var(--sky-2)}
+.badge{background:linear-gradient(135deg,var(--sky),var(--brand))}
+.badge.soft{background:#FFF3CC;color:#8A5A00}
+.lead-m{border:0;box-shadow:0 0 0 2.5px var(--sun),0 18px 40px rgba(255,170,31,.18)}
+.lic{background:#E8F1FD;color:var(--brand)}
+.nosub{background:
+  linear-gradient(110deg,rgba(15,35,71,.95),rgba(30,111,217,.85)),
+  url(photos/crew-roof.jpg) center/cover;border-radius:20px;padding:22px 24px}
+.nosub .ic{background:var(--sun)}
+.nosub .ic svg{stroke:var(--brand-ink)}
+
+/* steps */
+.step::before{background:linear-gradient(135deg,var(--sun),#FFAA1F);color:var(--brand-ink);box-shadow:0 6px 14px rgba(255,170,31,.35)}
+.step:nth-child(2)::before{background:linear-gradient(135deg,var(--sky-2),var(--sky));color:#fff}
+.step:nth-child(3)::before{background:linear-gradient(135deg,#7BE8C0,var(--mint));color:var(--brand-ink)}
+.step:nth-child(4)::before{background:linear-gradient(135deg,var(--sky),var(--brand));color:#fff}
+
+/* faq */
+summary::after{color:#fff;background:var(--sky);width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:18px;line-height:1}
+details[open] summary::after{background:var(--sun);color:var(--brand-ink)}
+details[open]{background:#F8FBFF}
+
+/* accept */
+.accept .r{background:linear-gradient(160deg,#E8F1FD,#FFF6DD)}
+.done .tick{background:linear-gradient(135deg,var(--mint),#12A473);animation:pop .6s var(--pop)}
+@keyframes pop{0%{transform:scale(0)}100%{transform:scale(1)}}
+
+/* luke's note & contact */
+.luke img,.contact img{box-shadow:0 0 0 4px #fff,0 0 0 7px var(--sun)}
+
+/* ---------- new: photo band ---------- */
+.band{position:relative;color:#fff;padding:80px 0;overflow:hidden;background:
+  linear-gradient(100deg,rgba(15,35,71,.95) 0%,rgba(27,54,100,.82) 45%,rgba(30,123,224,.45) 100%),
+  url(photos/crew-roof.jpg) center 45%/cover no-repeat}
+.band::before{content:"";position:absolute;right:-5%;top:0;bottom:0;width:22%;background:var(--sun);clip-path:polygon(60% 0,100% 0,100% 100%,0 100%);opacity:.92}
+.band .wrap{position:relative}
+.band h2{color:#fff;font-size:clamp(28px,4vw,42px);max-width:640px}
+.band h2::after{background:var(--sun)}
+.band p{max-width:560px;font-size:17px;opacity:.9;margin:18px 0 26px}
+.pills{display:flex;flex-wrap:wrap;gap:10px}
+.pills span{display:inline-flex;align-items:center;gap:8px;font:700 14px Inter;padding:10px 16px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(6px)}
+.pills span b{color:var(--sun)}
+@media(max-width:760px){.band::before{display:none}}
+
+/* ---------- new: install gallery ---------- */
+.gallery{display:grid;grid-template-columns:1.4fr 1fr 1fr;grid-template-rows:200px 200px;gap:14px;margin-top:22px}
+.gallery figure{margin:0;border-radius:20px;overflow:hidden;position:relative;box-shadow:0 14px 30px rgba(15,35,71,.12)}
+.gallery figure:first-child{grid-row:span 2}
+.gallery img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s var(--pop)}
+.gallery figure:hover img{transform:scale(1.07)}
+.gallery figcaption{position:absolute;left:12px;bottom:12px;font:700 12px Inter;background:rgba(255,255,255,.94);color:var(--brand);border-radius:999px;padding:6px 11px}
+@media(max-width:760px){.gallery{grid-template-columns:1fr 1fr;grid-template-rows:180px 140px 140px}.gallery figure:first-child{grid-column:span 2;grid-row:auto}}
+
+/* ---------- scroll-in animation ---------- */
+.rv{opacity:0;transform:translateY(28px) scale(.98);transition:opacity .6s ease,transform .7s var(--pop)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.cell:not(.off){animation:none}}
+
+footer{background:var(--brand);color:rgba(255,255,255,.75);margin-top:30px;border-top:6px solid var(--sun)}
+footer .logo{color:#fff}
+
+/* fixes */
+.kicker{display:flex;width:max-content;max-width:100%}
+h2{display:block;width:fit-content}
+table.cmp th.sel{background:var(--sky);color:#fff}
+.band + section{padding-top:56px !important}
+.note.wrap{padding-top:14px;padding-bottom:14px}
