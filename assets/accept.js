@@ -41,6 +41,8 @@ window.lcmbSendAccept = async function (p) {
   function phoneLine() { return 'Prefer to arrange it by phone? Call Luke on <a href="tel:0483927024">0483 927 024</a>.'; }
 
   window.lcmbInspection = async function (p, host, lead) {
+    // Only pass on a real street address (never a system size like "28.5kW three-phase solar").
+    if (!/\d+[a-z]?(\/\d+)?\s+[a-z' -]+\b(st|street|rd|road|ave|avenue|dr|drive|ct|court|cres|crescent|pl|place|way|tce|terrace|pde|parade|hwy|highway|cl|close|ln|lane|bvd|blvd|boulevard|gr|grove|cct|circuit|esp|esplanade)\b/i.test(p.address || "")) p.address = "";
     if (document.getElementById("insp")) return;
     document.head.appendChild(el("style", {}, css));
     const box = el("div", { id: "insp", className: "insp" }, '<div class="ld"><span class="sp"></span>Finding Luke\'s free windows…</div>');
