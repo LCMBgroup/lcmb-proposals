@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&display=swap');
 /* LCMB Group proposal theme: brighter, bouncier, more branded.
    Loaded after each page's own styles, so it overrides them for every proposal. */
 :root{
@@ -336,60 +337,75 @@ details.fdisc p{margin:8px 0 0}
 .xlist{margin:0;padding-left:18px;font-size:14.5px;line-height:1.7}
 .fprod[hidden]{display:none !important}
 
-/* ===================== LCMB brand (Veblen creative library) =====================
-   Official palette: charcoal #1A1A1A, navy #1B3664, grey #58585A, white. Angled navy stripes from the letterhead. */
-:root{--char:#1A1A1A;--navy:#1B3664;--grey:#58585A;
-  --sun:#C9D6EC;--sun-2:#E3EAF5;--sky:#1B3664;--sky-2:#2A4E8C;--brand-2:#2A4E8C;--brand-soft:#EEF2F8}
-.bar{background:var(--char);box-shadow:0 2px 18px rgba(0,0,0,.25)}
-.bar::after{background:var(--navy);height:4px;bottom:-4px}
-.bar .navlogo{content:url(brand/logo-white.png);height:40px}
-.bar nav a{color:rgba(255,255,255,.75)}
-.bar nav a:hover{color:#fff}
-.bar .btn,#go{background:#fff;color:var(--navy);box-shadow:0 6px 18px rgba(0,0,0,.25)}
-.bar .btn:hover{background:#E8EEF7}
-.bar .pdfbtn{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
-.bar .pdfbtn:hover{background:rgba(255,255,255,.1)}
-#go{background:var(--navy);color:#fff}
-#go:hover{background:#244A86}
-.btn{background:var(--navy);box-shadow:0 6px 16px rgba(27,54,100,.28)}
-.btn:hover{background:#244A86;box-shadow:0 10px 22px rgba(27,54,100,.32)}
+/* ===================== LCMB brand: fleet-wrap look (white, navy, bright sky blue) ===================== */
+:root{--navy:#1E3A6E;--navy-2:#16305C;--skyb:#3FA9F5;--sky-soft:#E7F3FE;
+  --sun:#BFE1FC;--sun-2:#E7F3FE;--sky:#3FA9F5;--sky-2:#6BBEF8;--brand:#1E3A6E;--brand-2:#2B5AA6;--brand-ink:#14284D;--brand-soft:#EEF4FB;--bg:#F5F8FC}
+.cond{font-family:Oswald,Inter,sans-serif;text-transform:uppercase;letter-spacing:.04em}
 
-.hero{background:
-  linear-gradient(100deg,var(--char) 0%,rgba(26,26,26,.95) 40%,rgba(26,26,26,.55) 62%,rgba(26,26,26,.1) 100%),
-  url(photos/battery-garage.jpg) right 35%/cover no-repeat,var(--char)}
+/* top bar: white, navy logo, navy + sky stripe */
+.bar{background:#fff;box-shadow:0 2px 14px rgba(20,40,77,.08)}
+.bar::after{height:4px;bottom:-4px;background:linear-gradient(90deg,var(--navy) 0 62%,var(--skyb) 62% 100%)}
+.bar .navlogo{content:url(brand/logo-navy.png);height:40px}
+.bar nav a{color:#4A5568}.bar nav a:hover{color:var(--navy)}
+.bar .btn,#go{background:var(--navy);color:#fff;box-shadow:0 6px 16px rgba(30,58,110,.3)}
+.bar .btn:hover,#go:hover{background:var(--skyb)}
+.bar .pdfbtn{background:#fff;color:var(--navy);border:1.5px solid #D5DEEA}
+.btn{background:var(--navy);box-shadow:0 6px 16px rgba(30,58,110,.25)}
+.btn:hover{background:var(--skyb);box-shadow:0 10px 22px rgba(63,169,245,.35)}
+
+/* hero: navy panel with the wrap's bright-blue diagonal and faded LCMB letters */
+.hero{background:linear-gradient(115deg,var(--navy-2) 0%,var(--navy) 55%,#24477F 100%);padding:52px 0 104px;overflow:hidden}
 .hero .watermark{display:none}
-.hero::before{left:auto;right:4%;bottom:26px;width:340px;height:46px;opacity:1;clip-path:none;
-  background:repeating-linear-gradient(115deg,transparent 0 22px,var(--navy) 22px 64px);transform:skewX(-25deg)}
-.hero::after{background:var(--bg)}
-.hero h1 .hi,.hero .hl{color:#9DB7E6}
-.chips span:nth-child(1){background:#fff;color:var(--navy);border-color:#fff}
-@media(max-width:760px){.hero{background:linear-gradient(180deg,rgba(26,26,26,.9),rgba(26,26,26,.96)),url(photos/battery-garage.jpg) center/cover no-repeat}.hero::before{width:200px;height:30px;bottom:18px}}
+.hero::before{content:"";position:absolute;inset:0 auto 0 auto;right:-8%;left:auto;bottom:0;top:0;width:46%;height:auto;opacity:1;transform:none;
+  background:linear-gradient(115deg,transparent 0 18%,var(--skyb) 18% 30%,rgba(63,169,245,.35) 30% 40%,transparent 40%);clip-path:none;z-index:0}
+.hero .wrap::before{content:"LCMB";position:absolute;right:2%;top:50%;transform:translateY(-50%) rotate(-8deg);font:800 190px/1 Montserrat,Inter,sans-serif;letter-spacing:-.02em;
+  color:transparent;-webkit-text-stroke:3px rgba(255,255,255,.07);pointer-events:none;z-index:0}
+.hero .wrap{position:relative;z-index:1}
+.hero::after{background:var(--bg);height:64px;clip-path:polygon(0 100%,100% 0,100% 100%);right:0;width:100%}
+.hero h1{text-shadow:none}
+.hero h1 .hi,.hero .hl{color:var(--skyb)}
+.hmeta{color:#BFE1FC}
+.hero .svc{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:16px;font:600 14px Oswald,Inter,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#fff}
+.hero .svc span{display:inline-flex;align-items:center;gap:6px}
+.hero .svc svg{width:18px;height:18px;stroke:var(--skyb);fill:none;stroke-width:2}
+.hero .loc{display:inline-block;margin-top:14px;font:700 13px Oswald,Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--skyb)}
+.chips span:nth-child(1){background:var(--skyb);color:#fff;border-color:var(--skyb)}
+@media(max-width:760px){.hero{padding:40px 0 84px}.hero::before{width:70%;right:-30%}.hero .wrap::before{font-size:110px;right:-6%}}
 
-.tag,.kicker{color:var(--navy)}
-footer{background:var(--char)}
+/* price card + accents */
+.seg button.on{background:var(--navy);box-shadow:0 6px 14px rgba(30,58,110,.3)}
+.opt .left{background:linear-gradient(120deg,var(--navy-2) 0%,var(--navy) 62%,var(--skyb) 62.2%,var(--skyb) 66%,#2B5AA6 66.2%,#2B5AA6 100%)}
+.opt .left .tag{background:var(--skyb);color:#fff}
+.price{background:none;-webkit-background-clip:initial;background-clip:initial;color:#fff}
+.fit{background:var(--sky-soft);color:#1f1f1f;border-left:4px solid var(--skyb)}
+.stars{color:#FBBC04}
+.kicker{color:var(--skyb);font-family:Oswald,Inter,sans-serif;letter-spacing:.14em}
+.kicker::before{background:var(--skyb)}
+.trust div{border-top-color:var(--skyb) !important}
+.trust div:nth-child(2){border-top-color:var(--navy) !important}
+.lukenote img,.luke img,.owner img{box-shadow:0 0 0 3px #fff,0 0 0 5px var(--skyb)}
+#finance{border-top-color:var(--skyb)}
+#finance>summary .fi{background:#fff;border:1.5px solid #DCE6F2}
+details[open] summary::after{background:var(--skyb);color:#fff}
+.step::before{background:var(--skyb);color:#fff;box-shadow:0 6px 14px rgba(63,169,245,.35)}
+footer{background:linear-gradient(115deg,var(--navy-2),var(--navy));border-top:6px solid var(--skyb)}
 footer img{content:url(brand/logo-white.png);height:auto !important;width:180px;max-width:60%}
+footer .svcline{display:block;margin:6px 0 4px;font:600 13px Oswald,Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#fff}
 
 /* customer video testimonials */
 .vids{margin:26px 0 8px}
-.vids h3{font-size:20px;margin:0 0 4px;color:var(--char)}
+.vids h3{font-size:20px;margin:0 0 4px;color:var(--navy)}
 .vids p.sub{margin:0 0 14px;color:#5A5A5C;font-size:14.5px}
 .vrow{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.vcard{margin:0;position:relative;border-radius:16px;overflow:hidden;background:var(--char);aspect-ratio:9/14;box-shadow:0 10px 24px rgba(0,0,0,.15)}
+.vcard{margin:0;position:relative;border-radius:16px;overflow:hidden;background:var(--navy);aspect-ratio:9/14;box-shadow:0 10px 24px rgba(20,40,77,.15)}
 .vcard video{width:100%;height:100%;object-fit:cover;display:block}
-.vcard .play{position:absolute;inset:0;display:grid;place-items:center;border:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.6));cursor:pointer}
-.vcard .play i{width:58px;height:58px;border-radius:50%;background:rgba(255,255,255,.95);display:grid;place-items:center;box-shadow:0 8px 20px rgba(0,0,0,.35)}
-.vcard .play i::before{content:"";margin-left:5px;border-left:18px solid var(--navy);border-top:11px solid transparent;border-bottom:11px solid transparent}
+.vcard .play{position:absolute;inset:0;display:grid;place-items:center;border:0;background:linear-gradient(180deg,transparent 55%,rgba(20,40,77,.7));cursor:pointer}
+.vcard .play i{width:58px;height:58px;border-radius:50%;background:var(--skyb);display:grid;place-items:center;box-shadow:0 8px 20px rgba(0,0,0,.3)}
+.vcard .play i::before{content:"";margin-left:5px;border-left:18px solid #fff;border-top:11px solid transparent;border-bottom:11px solid transparent}
 .vcard figcaption{position:absolute;left:12px;right:12px;bottom:10px;color:#fff;font:700 13.5px Inter;text-shadow:0 1px 6px rgba(0,0,0,.6);pointer-events:none}
 .vcard figcaption small{display:block;font-weight:500;opacity:.85}
 .vcard.on .play,.vcard.on figcaption{display:none}
 @media(max-width:760px){.vrow{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;padding-bottom:6px}.vcard{flex:0 0 62%;scroll-snap-align:start}}
-@media print{.vids{display:none !important}.bar .navlogo{content:normal}footer img{content:normal}}
-
-.stars{color:#FBBC04}
-.fit{background:#EEF2F8;color:#1f1f1f;border-left:4px solid var(--navy)}
-.seg button.on{background:var(--navy);box-shadow:0 6px 14px rgba(27,54,100,.3)}
-.opt .left{background:linear-gradient(160deg,#1A1A1A 0%,#1B3664 100%)}
-.opt .left .tag{background:#fff;color:var(--navy)}
-.hmeta{color:#C9D6EC}
-footer{border-top-color:var(--navy)}
-#finance{border-top-color:var(--navy)}
+@media print{.vids,.hero .wrap::before,.hero::before{display:none !important}.bar .navlogo,footer img{content:normal}}
+.hero::before{top:0 !important;bottom:0 !important;height:100% !important;width:52%;right:-6%}
+.battery .cell{background:linear-gradient(180deg,#9BD5FB,#3FA9F5) !important;box-shadow:0 0 18px rgba(63,169,245,.45) !important;border-color:rgba(255,255,255,.5) !important}
