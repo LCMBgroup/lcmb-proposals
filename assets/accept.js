@@ -114,6 +114,12 @@ window.lcmbSendAccept = async function (p) {
   #bookScreen .insp .tb.on{background:#1E3A6E;border-color:#1E3A6E}
   #bookScreen .insp .day{color:#1E3A6E}
   #bookScreen .btn.go{background:#1E3A6E}
+  #bookScreen .bs-photos{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:20px 0 4px}
+  #bookScreen .bs-photos figure{margin:0;position:relative;border-radius:14px;overflow:hidden;aspect-ratio:4/3;background:#1E3A6E}
+  #bookScreen .bs-photos img{width:100%;height:100%;object-fit:cover;display:block}
+  #bookScreen .bs-photos figure:first-child img{object-position:center 40%}
+  #bookScreen .bs-photos figcaption{position:absolute;left:0;right:0;bottom:0;padding:18px 10px 8px;background:linear-gradient(180deg,transparent,rgba(20,40,77,.85));color:#fff;font:600 12.5px Oswald,Inter,sans-serif;letter-spacing:.08em;text-transform:uppercase;text-align:left}
+  #bookScreen h2{text-align:center}
   #bookScreen .bs-card{background:#fff;border-radius:22px;box-shadow:0 18px 44px rgba(15,35,71,.10);max-width:620px;width:100%;padding:34px 26px 28px;text-align:center}
   #bookScreen .bs-tick{width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,#2FD69B,#12A473);display:grid;place-items:center;margin:0 auto 14px}
   #bookScreen h1{font-size:25px;margin:0 0 6px;color:#0F2347}
@@ -136,6 +142,7 @@ window.lcmbSendAccept = async function (p) {
       '<div class="bs-top"><img src="../assets/brand/logo-navy.png" alt="LCMB Group"><span class="bs-stripes"></span></div>' +
       '<div class="bs-card"><div class="bs-tick"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>' +
       '<h1>Thanks' + (first ? ", " + first.replace(/</g, "") : "") + '! Your quote is accepted.</h1>' +
+      '<div class="bs-photos"><figure><img src="../assets/photos/battery-garage.jpg" alt="LCMB battery install"><figcaption>Battery install</figcaption></figure><figure><img src="../assets/photos/install-2.jpg" alt="LCMB solar install"><figcaption>Solar install</figcaption></figure></div>' +
       '<h2>Pick a time for your site inspection</h2>' +
       '<p class="bs-lead" id="bsLead">Pick a 2-hour window. Luke will arrive within it, and the inspection takes about an hour.</p>' +
       '<div id="bsHost"></div></div>' +
