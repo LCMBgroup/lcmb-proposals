@@ -409,3 +409,7 @@ footer .svcline{display:block;margin:6px 0 4px;font:600 13px Oswald,Inter,sans-s
 @media print{.vids,.hero .wrap::before,.hero::before{display:none !important}.bar .navlogo,footer img{content:normal}}
 .hero::before{top:0 !important;bottom:0 !important;height:100% !important;width:52%;right:-6%}
 .battery .cell{background:linear-gradient(180deg,#9BD5FB,#3FA9F5) !important;box-shadow:0 0 18px rgba(63,169,245,.45) !important;border-color:rgba(255,255,255,.5) !important}
+/* faded real LCMB Group logo instead of outline letters */
+.hero .wrap::before{content:"" !important;-webkit-text-stroke:0;font:inherit;transform:translateY(-50%);right:0;top:50%;
+  width:400px;height:146px;background:url(brand/logo-white.png) right center/contain no-repeat;opacity:.13}
+@media(max-width:760px){.hero .wrap::before{display:none}}
