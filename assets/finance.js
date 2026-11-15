@@ -42,7 +42,7 @@
     $('#fFort').textContent = 'About ' + money(f, 2) + ' per fortnight over ' + state.t + ' year' + (state.t>1?'s':'') + ', on ' + money(amt) + (prod.estAdded ? ' plus the $199 establishment fee' : '') + '.';
     $('#fNote').textContent = prod.note;
     // headline: lowest weekly across both products at 10 years
-    var low = Math.min(fortnightly(PRODUCTS.green, amt, 10), fortnightly(PRODUCTS.zero, amt, 10)) / 2;
+    var low = fortnightly(PRODUCTS.green, amt, 10) / 2;
     $('#fFrom').textContent = 'from about ' + money(low) + '/week';
   }
   root.querySelectorAll('.fprod button').forEach(function(b){ b.onclick = function(){ state.p = b.dataset.p; update(); }; });
