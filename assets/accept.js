@@ -77,7 +77,7 @@ window.lcmbSendAccept = async function (p) {
       box.appendChild(row);
     });
     box.appendChild(go);
-    box.appendChild(el("p", { className: "more" }, "None of these suit? " + phoneLine()));
+    box.appendChild(el("p", { className: "more" }, "None of these suit? Call Luke on <a href=\"tel:0483927024\">0483 927 024</a>."));
     go.onclick = async () => {
       if (!pick) return;
       go.disabled = true; go.textContent = "Booking…";
