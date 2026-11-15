@@ -413,3 +413,9 @@ footer .svcline{display:block;margin:6px 0 4px;font:600 13px Oswald,Inter,sans-s
 .hero .wrap::before{content:"" !important;-webkit-text-stroke:0;font:inherit;transform:translateY(-50%);right:0;top:50%;
   width:400px;height:146px;background:url(brand/logo-white.png) right center/contain no-repeat;opacity:.13}
 @media(max-width:760px){.hero .wrap::before{display:none}}
+/* four reviews: 2x2 on desktop, swipe row on phones */
+@media(max-width:760px){
+  .rv-mini{display:flex !important;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;padding-bottom:6px}
+  .rv-mini .review{flex:0 0 86%;scroll-snap-align:start;display:block !important}
+}
+@media print{.rv-mini .review:nth-child(n+3){display:none !important}}
