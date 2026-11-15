@@ -16,7 +16,7 @@ window.lcmbSendAccept = async function (p) {
       });
       const j = await r.json();
       clearTimeout(t);
-      if (j && j.ok) { setTimeout(() => window.lcmbInspection(p), 0); return true; }
+      if (j && j.ok) { setTimeout(() => window.lcmbGoBook(), 900); return true; }
     } catch (e) { clearTimeout(t); }
   }
   return false;
@@ -40,15 +40,11 @@ window.lcmbSendAccept = async function (p) {
   function el(tag, attrs, html) { const e = document.createElement(tag); Object.assign(e, attrs || {}); if (html != null) e.innerHTML = html; return e; }
   function phoneLine() { return 'Prefer to arrange it by phone? Call Luke on <a href="tel:0483927024">0483 927 024</a>.'; }
 
-  window.lcmbInspection = async function (p) {
+  window.lcmbInspection = async function (p, host, lead) {
     if (document.getElementById("insp")) return;
-    const done = document.getElementById("done");
-    if (!done) return;
     document.head.appendChild(el("style", {}, css));
-    const lead = document.getElementById("doneLead");
-    if (lead) lead.textContent = "Last step: pick a time for Luke to come out for the site inspection. It takes about an hour.";
     const box = el("div", { id: "insp", className: "insp" }, '<div class="ld"><span class="sp"></span>Finding Luke\'s free times…</div>');
-    (lead || done.firstChild).insertAdjacentElement("afterend", box);
+    host.appendChild(box);
     const fail = msg => { box.innerHTML = '<div class="ok">' + msg + '</div>'; };
     let j;
     try {
@@ -99,18 +95,45 @@ window.lcmbSendAccept = async function (p) {
     };
   };
 
-  // Link for customers who have already accepted: …/?book=1 goes straight to the time picker.
+  window.lcmbGoBook = function () {
+    const q = new URLSearchParams(location.search); q.set("book", "1");
+    location.href = location.pathname + "?" + q.toString();
+  };
+
+  // The booking screen: shown after accepting, or from a …/?book=1 link.
+  const scss = `
+  html.bk,html.bk body{background:#F4F8FD}
+  html.bk body>*:not(#bookScreen){display:none !important}
+  #bookScreen{min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:28px 18px 50px;font-family:Inter,system-ui,sans-serif;color:#1f1f1f}
+  #bookScreen .bs-logo{height:46px;width:auto;margin-bottom:26px}
+  #bookScreen .bs-card{background:#fff;border-radius:22px;box-shadow:0 18px 44px rgba(15,35,71,.10);max-width:620px;width:100%;padding:34px 26px 28px;text-align:center}
+  #bookScreen .bs-tick{width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,#2FD69B,#12A473);display:grid;place-items:center;margin:0 auto 14px}
+  #bookScreen h1{font-size:25px;margin:0 0 6px;color:#0F2347}
+  #bookScreen .bs-sub{color:#5A5A5C;margin:0 0 6px;font-size:15px}
+  #bookScreen h2{font-size:19px;margin:26px 0 4px;color:#1B3664}
+  #bookScreen .bs-lead{color:#5A5A5C;margin:0 0 6px;font-size:14.5px}
+  #bookScreen .bs-back{margin-top:22px;font-size:14px;color:#1B3664}`;
   document.addEventListener("DOMContentLoaded", () => {
     if (!/[?&]book=1/.test(location.search)) return;
-    const form = document.getElementById("acceptForm"), done = document.getElementById("done");
-    if (!form || !done) return;
     const nm = (document.getElementById("nm") || {}).value || "";
     const em = (document.getElementById("em") || {}).value || "";
     const meta = ((document.querySelector(".hmeta") || {}).textContent || "").split(" · ");
-    form.style.display = "none"; done.style.display = "block";
-    const dn = document.getElementById("dName"); if (dn) dn.textContent = nm.split(" ")[0];
-    const conf = document.getElementById("conf"); if (conf) conf.style.display = "none";
-    window.lcmbInspection({ page: location.origin + location.pathname, name: nm, email: em, address: /\d/.test(meta[1] || "") ? meta[1] : "" });
-    setTimeout(() => document.getElementById("accept").scrollIntoView({ behavior: "smooth" }), 300);
+    document.head.appendChild(el("style", {}, scss));
+    document.documentElement.classList.add("bk");
+    const first = nm.split(" ")[0];
+    const q = new URLSearchParams(location.search); q.delete("book");
+    const back = location.pathname + (q.toString() ? "?" + q.toString() : "");
+    const scr = el("div", { id: "bookScreen" },
+      '<img class="bs-logo" src="../assets/grp.png" alt="LCMB Group">' +
+      '<div class="bs-card"><div class="bs-tick"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>' +
+      '<h1>Thanks' + (first ? ", " + first.replace(/</g, "") : "") + '! Your quote is accepted.</h1>' +
+      '<h2>Pick a time for your site inspection</h2>' +
+      '<p class="bs-lead" id="bsLead">Luke comes out to check everything on site. It takes about an hour.</p>' +
+      '<div id="bsHost"></div></div>' +
+      '<a class="bs-back" href="' + back + '">Back to your quote</a>');
+    document.body.appendChild(scr);
+    window.scrollTo(0, 0);
+    window.lcmbInspection({ page: location.origin + location.pathname, name: nm, email: em, address: /\d/.test(meta[1] || "") ? meta[1] : "" },
+      document.getElementById("bsHost"), document.getElementById("bsLead"));
   });
 })();
