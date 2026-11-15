@@ -43,7 +43,7 @@ window.lcmbSendAccept = async function (p) {
   window.lcmbInspection = async function (p, host, lead) {
     if (document.getElementById("insp")) return;
     document.head.appendChild(el("style", {}, css));
-    const box = el("div", { id: "insp", className: "insp" }, '<div class="ld"><span class="sp"></span>Finding Luke\'s free times…</div>');
+    const box = el("div", { id: "insp", className: "insp" }, '<div class="ld"><span class="sp"></span>Finding Luke\'s free windows…</div>');
     host.appendChild(box);
     const fail = msg => { box.innerHTML = '<div class="ok">' + msg + '</div>'; };
     let j;
@@ -58,7 +58,7 @@ window.lcmbSendAccept = async function (p) {
     }
     box.innerHTML = "";
     let pick = null;
-    const go = el("button", { className: "btn go", disabled: true }, "Pick a time above");
+    const go = el("button", { className: "btn go", disabled: true }, "Pick a window above");
     const days = {};
     j.slots.forEach(s => { (days[s.day] = days[s.day] || []).push(s); });
     Object.keys(days).forEach(d => {
@@ -67,7 +67,7 @@ window.lcmbSendAccept = async function (p) {
       days[d].forEach(s => {
         const b = el("button", { className: "tb", type: "button" }, s.time);
         b.onclick = () => { box.querySelectorAll(".tb.on").forEach(x => x.classList.remove("on")); b.classList.add("on"); pick = s;
-          go.disabled = false; go.textContent = "Book " + s.day + " at " + s.time; };
+          go.disabled = false; go.textContent = "Book " + s.day + ", " + s.time; };
         row.appendChild(b);
       });
       box.appendChild(row);
@@ -129,7 +129,7 @@ window.lcmbSendAccept = async function (p) {
       '<div class="bs-card"><div class="bs-tick"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>' +
       '<h1>Thanks' + (first ? ", " + first.replace(/</g, "") : "") + '! Your quote is accepted.</h1>' +
       '<h2>Pick a time for your site inspection</h2>' +
-      '<p class="bs-lead" id="bsLead">Luke comes out to check everything on site. It takes about an hour.</p>' +
+      '<p class="bs-lead" id="bsLead">Pick a 2-hour window. Luke will arrive within it, and the inspection takes about an hour.</p>' +
       '<div id="bsHost"></div></div>' +
       '<a class="bs-back" href="' + back + '">Back to your quote</a>');
     document.body.appendChild(scr);
