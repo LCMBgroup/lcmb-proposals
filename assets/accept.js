@@ -104,8 +104,14 @@ window.lcmbSendAccept = async function (p) {
   const scss = `
   html.bk,html.bk body{background:#F4F8FD}
   html.bk body>*:not(#bookScreen){display:none !important}
-  #bookScreen{min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:28px 18px 50px;font-family:Inter,system-ui,sans-serif;color:#1f1f1f}
-  #bookScreen .bs-logo{height:46px;width:auto;margin-bottom:26px}
+  #bookScreen{min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:0 0 50px;font-family:Inter,system-ui,sans-serif;color:#1f1f1f}
+  #bookScreen .bs-top{position:relative;width:100%;background:#1A1A1A;border-bottom:4px solid #1B3664;padding:22px 18px 70px;display:flex;justify-content:center;overflow:hidden}
+  #bookScreen .bs-top img{height:54px;width:auto;position:relative;z-index:1}
+  #bookScreen .bs-stripes{position:absolute;right:6%;bottom:16px;width:260px;height:34px;background:repeating-linear-gradient(115deg,transparent 0 18px,#1B3664 18px 52px);transform:skewX(-25deg)}
+  #bookScreen .bs-card{margin:-48px auto 0;width:calc(100% - 36px) !important;position:relative;z-index:2}
+  #bookScreen .bs-tick{background:#1B3664 !important}
+  #bookScreen .insp .tb.on{background:#1B3664;border-color:#1B3664}
+  #bookScreen .btn.go{background:#1B3664}
   #bookScreen .bs-card{background:#fff;border-radius:22px;box-shadow:0 18px 44px rgba(15,35,71,.10);max-width:620px;width:100%;padding:34px 26px 28px;text-align:center}
   #bookScreen .bs-tick{width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,#2FD69B,#12A473);display:grid;place-items:center;margin:0 auto 14px}
   #bookScreen h1{font-size:25px;margin:0 0 6px;color:#0F2347}
@@ -125,7 +131,7 @@ window.lcmbSendAccept = async function (p) {
     const q = new URLSearchParams(location.search); q.delete("book");
     const back = location.pathname + (q.toString() ? "?" + q.toString() : "");
     const scr = el("div", { id: "bookScreen" },
-      '<img class="bs-logo" src="../assets/grp.png" alt="LCMB Group">' +
+      '<div class="bs-top"><img src="../assets/brand/logo-white.png" alt="LCMB Group"><span class="bs-stripes"></span></div>' +
       '<div class="bs-card"><div class="bs-tick"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>' +
       '<h1>Thanks' + (first ? ", " + first.replace(/</g, "") : "") + '! Your quote is accepted.</h1>' +
       '<h2>Pick a time for your site inspection</h2>' +

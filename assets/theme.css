@@ -335,3 +335,61 @@ details.fdisc p{margin:8px 0 0}
 .xtras b{color:var(--brand)}
 .xlist{margin:0;padding-left:18px;font-size:14.5px;line-height:1.7}
 .fprod[hidden]{display:none !important}
+
+/* ===================== LCMB brand (Veblen creative library) =====================
+   Official palette: charcoal #1A1A1A, navy #1B3664, grey #58585A, white. Angled navy stripes from the letterhead. */
+:root{--char:#1A1A1A;--navy:#1B3664;--grey:#58585A;
+  --sun:#C9D6EC;--sun-2:#E3EAF5;--sky:#1B3664;--sky-2:#2A4E8C;--brand-2:#2A4E8C;--brand-soft:#EEF2F8}
+.bar{background:var(--char);box-shadow:0 2px 18px rgba(0,0,0,.25)}
+.bar::after{background:var(--navy);height:4px;bottom:-4px}
+.bar .navlogo{content:url(brand/logo-white.png);height:40px}
+.bar nav a{color:rgba(255,255,255,.75)}
+.bar nav a:hover{color:#fff}
+.bar .btn,#go{background:#fff;color:var(--navy);box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.bar .btn:hover{background:#E8EEF7}
+.bar .pdfbtn{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
+.bar .pdfbtn:hover{background:rgba(255,255,255,.1)}
+#go{background:var(--navy);color:#fff}
+#go:hover{background:#244A86}
+.btn{background:var(--navy);box-shadow:0 6px 16px rgba(27,54,100,.28)}
+.btn:hover{background:#244A86;box-shadow:0 10px 22px rgba(27,54,100,.32)}
+
+.hero{background:
+  linear-gradient(100deg,var(--char) 0%,rgba(26,26,26,.95) 40%,rgba(26,26,26,.55) 62%,rgba(26,26,26,.1) 100%),
+  url(photos/battery-garage.jpg) right 35%/cover no-repeat,var(--char)}
+.hero .watermark{display:none}
+.hero::before{left:auto;right:4%;bottom:26px;width:340px;height:46px;opacity:1;clip-path:none;
+  background:repeating-linear-gradient(115deg,transparent 0 22px,var(--navy) 22px 64px);transform:skewX(-25deg)}
+.hero::after{background:var(--bg)}
+.hero h1 .hi,.hero .hl{color:#9DB7E6}
+.chips span:nth-child(1){background:#fff;color:var(--navy);border-color:#fff}
+@media(max-width:760px){.hero{background:linear-gradient(180deg,rgba(26,26,26,.9),rgba(26,26,26,.96)),url(photos/battery-garage.jpg) center/cover no-repeat}.hero::before{width:200px;height:30px;bottom:18px}}
+
+.tag,.kicker{color:var(--navy)}
+footer{background:var(--char)}
+footer img{content:url(brand/logo-white.png);height:auto !important;width:180px;max-width:60%}
+
+/* customer video testimonials */
+.vids{margin:26px 0 8px}
+.vids h3{font-size:20px;margin:0 0 4px;color:var(--char)}
+.vids p.sub{margin:0 0 14px;color:#5A5A5C;font-size:14.5px}
+.vrow{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.vcard{margin:0;position:relative;border-radius:16px;overflow:hidden;background:var(--char);aspect-ratio:9/14;box-shadow:0 10px 24px rgba(0,0,0,.15)}
+.vcard video{width:100%;height:100%;object-fit:cover;display:block}
+.vcard .play{position:absolute;inset:0;display:grid;place-items:center;border:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.6));cursor:pointer}
+.vcard .play i{width:58px;height:58px;border-radius:50%;background:rgba(255,255,255,.95);display:grid;place-items:center;box-shadow:0 8px 20px rgba(0,0,0,.35)}
+.vcard .play i::before{content:"";margin-left:5px;border-left:18px solid var(--navy);border-top:11px solid transparent;border-bottom:11px solid transparent}
+.vcard figcaption{position:absolute;left:12px;right:12px;bottom:10px;color:#fff;font:700 13.5px Inter;text-shadow:0 1px 6px rgba(0,0,0,.6);pointer-events:none}
+.vcard figcaption small{display:block;font-weight:500;opacity:.85}
+.vcard.on .play,.vcard.on figcaption{display:none}
+@media(max-width:760px){.vrow{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;padding-bottom:6px}.vcard{flex:0 0 62%;scroll-snap-align:start}}
+@media print{.vids{display:none !important}.bar .navlogo{content:normal}footer img{content:normal}}
+
+.stars{color:#FBBC04}
+.fit{background:#EEF2F8;color:#1f1f1f;border-left:4px solid var(--navy)}
+.seg button.on{background:var(--navy);box-shadow:0 6px 14px rgba(27,54,100,.3)}
+.opt .left{background:linear-gradient(160deg,#1A1A1A 0%,#1B3664 100%)}
+.opt .left .tag{background:#fff;color:var(--navy)}
+.hmeta{color:#C9D6EC}
+footer{border-top-color:var(--navy)}
+#finance{border-top-color:var(--navy)}
