@@ -258,7 +258,7 @@
 <div class="bar"><div class="wrap">
   <img class="navlogo" src="../assets/grp.png" alt="LCMB Group">
   <nav><a href="#options">Your price</a><a href="#why">Why LCMB</a><a href="#more">More detail</a></nav>
-  <a class="btn" href="#accept">Accept quote</a>
+  <span><a class="btn pdfbtn" href="#" onclick="return lcmbPDF()">PDF</a><a class="btn" href="#accept">Accept quote</a></span>
 </div></div>
 
 <header class="hero compact"><img src="../assets/grp_sq_white.png" alt="" class="watermark"><div class="wrap">
@@ -365,6 +365,8 @@
     </div>
   </div>
 </div></section>
+
+<div class="wrap pdfline"><a href="#" onclick="return lcmbPDF()">Download quote (PDF)</a></div>
 
 <!-- why LCMB -->
 <section id="why" style="padding-top:10px"><div class="wrap">
@@ -584,5 +586,6 @@ renderApps(); renderAddons(); setOpt(2);
 <script src="../assets/track.js"></script>
 <script src="../assets/fx.js"></script>
 <script src="../assets/finance.js"></script>
+<script src="../assets/pdf.js"></script>
 </body>
 </html>

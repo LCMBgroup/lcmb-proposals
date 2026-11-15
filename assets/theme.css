@@ -294,3 +294,32 @@ details#blackout[open]{background:#F8FBFF !important}
 details.fdisc>summary{font-size:12px;color:var(--muted);padding:0;font-weight:600}
 details.fdisc>summary::after{display:none}
 details.fdisc p{margin:8px 0 0}
+
+/* ---------- PDF download ---------- */
+.bar .pdfbtn{background:#fff;color:var(--brand);border:1.5px solid var(--line);box-shadow:none;margin-right:8px}
+.bar .pdfbtn:hover{background:#F4F8FD;transform:translateY(-1px)}
+.pdfline{text-align:center;margin:18px 0 0}
+.pdfline a{font:700 14.5px Inter;color:var(--brand);text-decoration:underline;text-underline-offset:3px}
+@media(max-width:760px){.bar .pdfbtn{padding:9px 12px;font-size:13px}}
+@media print{
+  @page{size:A4;margin:12mm}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{background:#fff}
+  .bar,.seg,#acceptForm .seg,#go,.oneTap,.pdfline,.fprod,.fterms,#done .btn,#doneBtns,.watermark,.hero::before,.hero::after,footer .note{display:none !important}
+  .hero.compact{padding:24px 0 30px !important}
+  .rv{opacity:1 !important;transform:none !important}
+  .card,.trust div,.review,details.acc,.opt,.fout,.lukenote{break-inside:avoid;box-shadow:none !important}
+  section{padding:16px 0 !important}
+  #options{margin-top:0 !important}
+  details>summary::after{display:none !important}
+  .cell{animation:none !important}
+  a[href^="http"]:after{content:""}
+}
+@media print{
+  details.acc,.accs,.accbody,.card.accs{break-inside:auto !important}
+  #blackout,#accept,#more>.wrap>.kicker,#more>.wrap>h2,#why .grate,.rv-mini .review:nth-child(2){display:none !important}
+  details.acc>summary{padding:10px 0 4px !important}
+  .accbody{padding:0 0 8px !important}
+  .team .member{break-inside:avoid}
+  #finance{margin-top:10px}
+}
