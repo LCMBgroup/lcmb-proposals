@@ -5,12 +5,15 @@
     green: { name: "Brighte Green Loan (discounted battery rate)", rate: 0.0849, estFee: 199, estAdded: true, weeklyFee: 2.99,
              terms: [2,3,5,7,10],
              note: "8.49% p.a. fixed (comparison rate 10.21% p.a.^). Establishment fee from $199 added to the loan. $2.99/week account fee included." },
+    solar: { name: "Brighte Green Loan", rate: 0.0999, estFee: 199, estAdded: true, weeklyFee: 2.99,
+             terms: [2,3,5,7,10],
+             note: "From 9.99% p.a. fixed (comparison rate 11.70% p.a.^). Establishment fee from $199 added to the loan. $2.99/week account fee included. Your rate depends on Brighte's credit assessment." },
     zero:  { name: "Brighte 0% Interest Payment Plan", rate: 0, estFee: 75, estAdded: false, weeklyFee: 2.30,
              terms: [1,2,3,5,7,10],
              note: "0% interest. $75 establishment fee payable on your first repayment. $2.30/week account fee included." }
   };
   var root = document.getElementById('finance'); if (!root) return;
-  var state = { p: 'green', t: 5 };
+  var state = { p: (root.dataset.product && PRODUCTS[root.dataset.product]) ? root.dataset.product : 'green', t: 5 };
   var $ = function(s){ return root.querySelector(s); };
   var money = function(n, dp){ return '$' + n.toLocaleString('en-AU', {minimumFractionDigits: dp||0, maximumFractionDigits: dp||0}); };
 
@@ -42,7 +45,7 @@
     $('#fFort').textContent = 'About ' + money(f, 2) + ' per fortnight over ' + state.t + ' year' + (state.t>1?'s':'') + ', on ' + money(amt) + (prod.estAdded ? ' plus the $199 establishment fee' : '') + '.';
     $('#fNote').textContent = prod.note;
     // headline: lowest weekly across both products at 10 years
-    var low = fortnightly(PRODUCTS.green, amt, 10) / 2;
+    var low = fortnightly(PRODUCTS[state.p], amt, 10) / 2;
     $('#fFrom').textContent = 'from about ' + money(low) + '/week';
   }
   root.querySelectorAll('.fprod button').forEach(function(b){ b.onclick = function(){ state.p = b.dataset.p; update(); }; });

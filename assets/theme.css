@@ -326,3 +326,12 @@ details.fdisc p{margin:8px 0 0}
 #finance>summary .fi{width:auto;height:auto;padding:10px 14px;background:#fff;border:1.5px solid #D6F5EA;border-radius:14px}
 #finance>summary .fi img{height:26px;width:auto;display:block}
 @media(max-width:760px){#finance>summary .fi{padding:8px 10px}#finance>summary .fi img{height:20px}}
+
+/* ---------- solar quotes ---------- */
+.sysfacts{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.sysfacts span{font:700 12.5px Inter;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#fff}
+.sysfacts span:last-child{background:var(--sun);color:var(--brand-ink);border-color:var(--sun)}
+.xtras{margin-top:14px;font-size:13.5px;color:var(--muted);background:#F4F8FD;border-radius:12px;padding:12px 14px;line-height:1.55}
+.xtras b{color:var(--brand)}
+.xlist{margin:0;padding-left:18px;font-size:14.5px;line-height:1.7}
+.fprod[hidden]{display:none !important}
