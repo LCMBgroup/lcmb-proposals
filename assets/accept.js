@@ -1,5 +1,5 @@
 // Sends a proposal acceptance straight to LCMB Group.
-window.LCMB_ACCEPT_URL = "__ACCEPT_URL__";
+window.LCMB_ACCEPT_URL = "https://script.google.com/macros/s/AKfycby0JLYqj82QpHe-z7-h8yMLbWJR7oJ0ZpK-uTDF4CLPhah4VB5OeO2anco882LTL4sR/exec";
 window.lcmbSendAccept = async function (p) {
   if (/__ACCEPT_URL__/.test(window.LCMB_ACCEPT_URL)) return false; // not switched on yet: use the email button
   for (let i = 0; i < 2; i++) {
