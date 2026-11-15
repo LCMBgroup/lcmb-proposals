@@ -110,7 +110,8 @@ window.lcmbSendAccept = async function (p) {
   #bookScreen .bs-tick{width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,#2FD69B,#12A473);display:grid;place-items:center;margin:0 auto 14px}
   #bookScreen h1{font-size:25px;margin:0 0 6px;color:#0F2347}
   #bookScreen .bs-sub{color:#5A5A5C;margin:0 0 6px;font-size:15px}
-  #bookScreen h2{font-size:19px;margin:26px 0 4px;color:#1B3664}
+  #bookScreen h2{font-size:19px;margin:26px 0 4px;color:#1B3664;text-align:center}
+  #bookScreen h2::after,#bookScreen h1::after{display:none}
   #bookScreen .bs-lead{color:#5A5A5C;margin:0 0 6px;font-size:14.5px}
   #bookScreen .bs-back{margin-top:22px;font-size:14px;color:#1B3664}`;
   document.addEventListener("DOMContentLoaded", () => {
