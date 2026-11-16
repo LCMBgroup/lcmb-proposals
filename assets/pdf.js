@@ -7,7 +7,7 @@ window.lcmbPDF = function () {
   var fin = document.querySelector('details.fdisc'); var finWas = fin && fin.open; if (fin) fin.open = true;
   document.querySelectorAll('.rv').forEach(function (e) { e.classList.add('in'); });
   var t = document.title;
-  document.title = t.replace(/^LCMB Group – Battery proposal for /, 'LCMB Group quote – ');
+  document.title = t.replace(/^LCMB Group – (Solar &amp; battery |Solar & battery |Solar rewire |Solar |Battery )?proposal for /i, 'LCMB Group quote – ');
   setTimeout(function () {
     window.print();
     setTimeout(function () {
