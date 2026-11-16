@@ -52,4 +52,37 @@
   var tot = document.getElementById('sTot');
   if (tot && 'MutationObserver' in window) new MutationObserver(update).observe(tot, {childList:true, characterData:true, subtree:true});
   update();
+
+  // One tap: "I'd like to finance with Brighte" -> Luke is notified straight away.
+  var key = 'lcmb_fin_' + location.pathname;
+  var out = $('.fout');
+  if (out && !document.getElementById('finGo')) {
+    var box = document.createElement('div');
+    box.className = 'fin-cta';
+    box.innerHTML = '<button type="button" class="btn" id="finGo">Yes, I\'d like to use Brighte finance</button>' +
+      '<p class="fin-sub">No forms here. Luke will be in touch to set up your Brighte application.</p>';
+    out.appendChild(box);
+    var go = document.getElementById('finGo');
+    var done = function () {
+      box.innerHTML = '<div class="fin-ok"><b>Thanks, we\'ve let Luke know you\'d like to use Brighte finance.</b><br>He\'ll be in touch to set up your application. You can still accept your quote below.</div>';
+    };
+    var seen = false; try { seen = !!localStorage.getItem(key); } catch (e) {}
+    if (seen) done();
+    go && (go.onclick = async function () {
+      go.disabled = true; go.textContent = 'Sending…';
+      var meta = ((document.querySelector('.hmeta') || {}).textContent || '').split(' · ');
+      var on = document.querySelector('#seg2 button.on, .seg button.on');
+      var p = { type: 'finance', page: location.origin + location.pathname,
+        name: (document.getElementById('nm') || {}).value || '', email: (document.getElementById('em') || {}).value || '',
+        address: meta[1] || '', option: on ? on.textContent.trim() : '', price: money(amount()),
+        term: state.t + ' years', weekly: ($('#fWeek') || {}).textContent || '' };
+      var ok = false;
+      try {
+        var r = await fetch(window.LCMB_ACCEPT_URL, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(p) });
+        var j = await r.json(); ok = !!(j && j.ok);
+      } catch (e) {}
+      if (ok) { try { localStorage.setItem(key, '1'); } catch (e) {} try { window.lcmbTrack && window.lcmbTrack('finance request'); } catch (e) {} done(); }
+      else { go.disabled = false; go.textContent = 'Couldn\'t send. Tap to try again, or call Luke on 0483 927 024'; }
+    });
+  }
 })();

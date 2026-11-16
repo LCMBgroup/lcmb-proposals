@@ -251,7 +251,7 @@
   footer .logo{display:block;margin-bottom:6px}
   .note{font-size:13px;color:var(--muted);margin-top:12px}
 </style>
-<link rel="stylesheet" href="../assets/theme.css?v=6">
+<link rel="stylesheet" href="../assets/theme.css?v=8">
 </head>
 <body>
 
@@ -584,11 +584,11 @@ $("#go").onclick=e=>{
 $("#copy").onclick=async()=>{ try{ await navigator.clipboard.writeText($("#conf").textContent); $("#copy").textContent="Copied ✓"; }catch(e){ $("#copy").textContent="Select the text above to copy"; } };
 renderApps(); renderAddons(); setOpt(2);
 </script>
-<script src="../assets/accept.js?v=11"></script>
+<script src="../assets/accept.js?v=12"></script>
 <script src="../assets/brand.js?v=3"></script>
 <script src="../assets/track.js"></script>
 <script src="../assets/fx.js"></script>
-<script src="../assets/finance.js"></script>
+<script src="../assets/finance.js?v=2"></script>
 <script src="../assets/pdf.js"></script>
 </body>
 </html>

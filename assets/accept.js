@@ -4,6 +4,7 @@ window.lcmbSendAccept = async function (p) {
   if (/__ACCEPT_URL__/.test(window.LCMB_ACCEPT_URL)) return false; // not switched on yet: use the email button
   const em = document.getElementById("em");
   if (em && em.value && !p.email) p.email = em.value;
+  try { if (localStorage.getItem("lcmb_fin_" + location.pathname)) p.finance = "Wants Brighte finance"; } catch (e) {}
   for (let i = 0; i < 2; i++) {
     const ctl = new AbortController();
     const t = setTimeout(() => ctl.abort(), 20000);

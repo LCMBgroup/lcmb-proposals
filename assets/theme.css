@@ -419,3 +419,12 @@ footer .svcline{display:block;margin:6px 0 4px;font:600 13px Oswald,Inter,sans-s
   .rv-mini .review{flex:0 0 86%;scroll-snap-align:start;display:block !important}
 }
 @media print{.rv-mini .review:nth-child(n+3){display:none !important}}
+/* finance request */
+.fin-cta{margin-top:14px}
+.fin-cta .btn{width:100%;justify-content:center}
+.fin-sub{margin:8px 0 0;font-size:13px;color:#5A5A5C}
+.fin-ok{margin-top:14px;padding:12px 14px;border-radius:12px;background:#E7F3FE;border:1.5px solid #3FA9F5;font-size:14px;color:#1f1f1f}
+@media print{.fin-cta,.fin-ok{display:none !important}}
+.fout .fin-cta .btn{background:#3FA9F5;color:#fff;box-shadow:0 8px 20px rgba(0,0,0,.25)}
+.fout .fin-cta .btn:hover{background:#fff;color:#1E3A6E}
+.fout .fin-sub{color:#CFE3F7}
