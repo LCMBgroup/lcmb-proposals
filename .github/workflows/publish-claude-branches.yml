@@ -1,0 +1,25 @@
+name: Publish quote branches
+on:
+  push:
+    branches: ['claude/**']
+permissions:
+  contents: write
+concurrency:
+  group: publish-main
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Merge into main
+        run: |
+          git config user.name "LCMB Group"
+          git config user.email "admin@lcmbgroup.com.au"
+          git fetch origin main "$GITHUB_REF_NAME"
+          git checkout -B main origin/main
+          git merge --no-edit "origin/$GITHUB_REF_NAME"
+          git push origin main
+          git push origin --delete "$GITHUB_REF_NAME" || true
