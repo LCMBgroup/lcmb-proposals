@@ -86,6 +86,38 @@
     clicks.push(stamp + " " + t);
     if (opened) { send("update"); sent = seconds; }
   }
+  // Lets other scripts log events (finance request, inspection booked, video plays).
+  window.lcmbTrack = function (t) { try { if (/^video /.test(t)) t = "Played " + t.slice(6) + "'s video"; log(t.charAt(0).toUpperCase() + t.slice(1)); } catch (e) {} };
+
+  // Testimonial videos: how long each one was watched (logged when paused or finished).
+  function watched(v) { var s = 0, r = v.played; for (var i = 0; i < r.length; i++) s += r.end(i) - r.start(i); return Math.round(s); }
+  function vidName(v) { var c = v.closest && v.closest("figure"); var f = c && c.querySelector("figcaption"); return f ? f.firstChild.textContent.trim() : "testimonial"; }
+  function vidLog(e) {
+    var v = e.target; if (!v || v.tagName !== "VIDEO") return;
+    var w = watched(v), d = Math.round(v.duration || 0);
+    if (w < 1 || v._lcmbLogged === w) return; v._lcmbLogged = w;
+    log("Watched " + vidName(v) + "'s video " + w + "s" + (d ? " of " + d + "s" : "") + (e.type === "ended" ? " (to the end)" : ""));
+  }
+  document.addEventListener("pause", vidLog, true);
+  document.addEventListener("ended", vidLog, true);
+
+  // Google reviews: logged the first time the reviews are on screen, with time spent on them.
+  var revTime = 0, revSeen = false, revOn = false;
+  if ("IntersectionObserver" in window) {
+    var revWatch = function () {
+      var r = document.querySelector(".rv-mini");
+      if (!r) return;
+      new IntersectionObserver(function (es) {
+        revOn = es[0].isIntersecting;
+        if (revOn && !revSeen) { revSeen = true; log("Saw Google reviews"); }
+      }, { threshold: 0.4 }).observe(r);
+    };
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", revWatch); else revWatch();
+    setInterval(function () { if (revOn && document.visibilityState === "visible") revTime++; }, 1000);
+    var revFlush = function () { if (revTime >= 3 && revTime !== revFlush.last) { revFlush.last = revTime; clicks = clicks.filter(function (c) { return !/ Read Google reviews \d+s$/.test(c); }); log("Read Google reviews " + revTime + "s"); } };
+    document.addEventListener("visibilitychange", function () { if (document.visibilityState === "hidden") revFlush(); }, true);
+    window.addEventListener("pagehide", revFlush, true);
+  }
   document.addEventListener("click", function (e) {
     var el = e.target.closest ? e.target.closest("button, a, label.app, .addon, summary, .seg button") : null;
     if (!el) return;
@@ -106,6 +138,7 @@
     var href = el.getAttribute && el.getAttribute("href") || "";
     if (/^tel:/.test(href)) return log("Tapped call");
     if (/^mailto:/.test(href)) return log("Tapped email");
+    if (/google\.com\/local\/reviews|g\.page|maps\.app/.test(href)) return log("Opened Google reviews");
     var t = el.textContent.trim().replace(/\s+/g, " ").slice(0, 40);
     if (t) log("Clicked " + t);
   }, true);
