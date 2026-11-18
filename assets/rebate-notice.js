@@ -22,6 +22,18 @@
       "<p>Please be aware that weather delays or other circumstances outside our control may affect installation dates. If your installation is delayed into January, your proposal will need to be re-quoted to reflect the reduced rebate.</p>" +
       "<p>Saturday installations may also be available if you prefer an earlier installation date. These attract an additional charge to cover staff overtime.</p>";
     host.insertBefore(box, host.firstChild);
+
+    // Short note just under the price card, linking to the full notice above the Accept button.
+    var price = document.getElementById("oPrice");
+    var card = price && price.closest(".left") && price.closest(".left").parentElement;
+    if (card && !document.getElementById("rebateShort")) {
+      var s = document.createElement("p");
+      s.id = "rebateShort";
+      s.style.cssText = "margin:14px 0 0;padding:10px 14px;background:#EEF5FD;border-left:4px solid #1B3664;border-radius:10px;font-size:13.5px;line-height:1.5;color:#33363b;text-align:left";
+      s.innerHTML = "<b style=\"color:#1B3664\">Installation update:</b> we're scheduling installs around the battery rebate reduction on 1 January 2027. Saturday installs may also be available. <a href=\"#rebateNotice\" style=\"color:#1B3664;font-weight:600\">Read more</a>";
+      s.querySelector("a").onclick = function (e) { e.preventDefault(); box.scrollIntoView({ behavior: "smooth", block: "center" }); };
+      card.parentNode.insertBefore(s, card.nextSibling);
+    }
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", add); else add();
 })();
