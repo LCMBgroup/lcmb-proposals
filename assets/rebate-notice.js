@@ -3,6 +3,8 @@
 (function () {
   var END = Date.UTC(2027, 0, 30, 14, 0, 0); // 31 Jan 2027 00:00 in Brisbane (UTC+10)
   if (Date.now() >= END) return;
+  // Quotes already priced for a January install use data-mode="january" on the script tag.
+  var me = document.currentScript, JAN = !!(me && me.getAttribute("data-mode") === "january");
   function add() {
     if (document.getElementById("rebateNotice")) return;
     var host = document.querySelector("#accept .wrap");
@@ -16,7 +18,9 @@
     document.head.appendChild(css);
     var box = document.createElement("div");
     box.id = "rebateNotice";
-    box.innerHTML =
+    box.innerHTML = JAN ?
+      '<b class="t">Installation Timing &amp; Battery Rebate</b>' +
+      "<p>This is a January 2027 install, and your price is based on the January rebate rates.</p>" :
       '<b class="t">Installation Scheduling &amp; Battery Rebate</b>' +
       "<p>We are currently working to complete installations before the government battery rebate reduces on 1 January 2027.</p>" +
       "<p>Please be aware that weather delays or other circumstances outside our control may affect installation dates. If your installation is delayed into January, your proposal will need to be re-quoted to reflect the reduced rebate.</p>" +
@@ -30,8 +34,8 @@
       var s = document.createElement("p");
       s.id = "rebateShort";
       s.style.cssText = "margin:14px 0 0;padding:10px 14px;background:#EEF5FD;border-left:4px solid #1B3664;border-radius:10px;font-size:13.5px;line-height:1.5;color:#33363b;text-align:left";
-      s.innerHTML = "<b style=\"color:#1B3664\">Installation update:</b> we're scheduling installs around the battery rebate reduction on 1 January 2027. Saturday installs may also be available. <a href=\"#rebateNotice\" style=\"color:#1B3664;font-weight:600\">Read more</a>";
-      s.querySelector("a").onclick = function (e) { e.preventDefault(); box.scrollIntoView({ behavior: "smooth", block: "center" }); };
+      s.innerHTML = JAN ? "<b style=\"color:#1B3664\">Installation timing:</b> this is a January 2027 install, and your price is based on the January rebate rates." : "<b style=\"color:#1B3664\">Installation update:</b> we're scheduling installs around the battery rebate reduction on 1 January 2027. Saturday installs may also be available. <a href=\"#rebateNotice\" style=\"color:#1B3664;font-weight:600\">Read more</a>";
+      if (s.querySelector("a")) s.querySelector("a").onclick = function (e) { e.preventDefault(); box.scrollIntoView({ behavior: "smooth", block: "center" }); };
       card.parentNode.insertBefore(s, card.nextSibling);
     }
   }
