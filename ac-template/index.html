@@ -449,8 +449,9 @@
 <script>
 /* ===== Everything customer-specific lives in JOB (plus the title, h1, hmeta and #nm/#em above). ===== */
 const JOB={
+  kind:"ducted",                                     // "ducted" or "split" (wording only)
   address:"1 Example Street, Southport",           // street + suburb, used in the accept email subject
-  size:"10kW",
+  size:"10kW",                                       // default size; an option can override with its own size:"12.5kW"
   note:"Thanks for the chat. I've priced the four upstairs bedrooms and the landing with three brands at the same 10kW size, all with the same outlets and zoning, so you can compare like for like. Have a look through, and if the pricing suits, book a time and I'll come out and check the site.",
   recommended:null,                                  // option number Haydyn recommends, or null
   first:1,                                           // option shown first (the recommended one, if any)
@@ -551,7 +552,8 @@ const fmt=n=>"$"+n.toLocaleString("en-AU");
 const chk='<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1B3664" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';
 const crs='<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#B45309" stroke-width="3.5" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>';
 const chkW='<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';
-const sysName=o=>`${o.brand} ${JOB.size} ducted`;
+const KIND=JOB.kind==="split"?"split system":"ducted";
+const sysName=o=>`${o.brand} ${o.size||JOB.size} ${KIND}`;
 const li=(x,ic)=>`<li><span class="chk">${ic||chk}</span>${x}</li>`;
 
 function build(){
@@ -596,7 +598,7 @@ function setOpt(n){
   $("#oPrice").innerHTML=fmt(o.price)+"<small>including GST · final price confirmed at your site inspection</small>";
   $("#oSpec").innerHTML=[JOB.zones,JOB.outlets+" ceiling outlets","10-yr workmanship warranty"].map(s=>`<span>${s}</span>`).join("");
   $("#oModels").textContent=`Indoor ${o.indoor} · Outdoor ${o.outdoor}`;
-  $("#oList").innerHTML=[`${o.brand} ${o.indoor} ducted indoor unit and ${o.outdoor} outdoor condenser`,...JOB.cardList].map(x=>li(x)).join("");
+  $("#oList").innerHTML=[`${o.brand} ${o.indoor} ${JOB.kind==="split"?"wall-mounted":"ducted"} indoor unit and ${o.outdoor} outdoor ${JOB.kind==="split"?"unit":"condenser"}`,...JOB.cardList].map(x=>li(x)).join("");
   $("#oFit").innerHTML=o.fit||""; $("#oFit").style.display=o.fit?"":"none";
   NUMS.forEach(k=>document.querySelectorAll("table.cmp .c"+k).forEach(c=>c.classList.toggle("sel",k===n)));
   totals();
