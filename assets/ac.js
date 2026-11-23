@@ -12,7 +12,7 @@ window.LCMB_AC = {
     { n: "Haydyn", role: "Air con sales & installations", lic: "", photo: "../assets/team-haydyn.jpg", lead: true, d: "Your main contact from quote to handover, and the one who'll come out for your site inspection." },
     { n: "Lochie", role: "Air conditioning tech", lic: "", photo: "../assets/team-lochie.jpg", d: "Part of the LCMB air con install crew." },
     { n: "Tom", role: "Air conditioning tech", lic: "", photo: "../assets/team-tom.jpg", d: "Part of the LCMB air con install crew." },
-    { n: "Badi", role: "Air conditioning tech", lic: "", photo: "", d: "Part of the LCMB air con install crew." },
+    { n: "Badi", role: "Air conditioning tech", lic: "", photo: "../assets/team-badi.jpg", d: "Part of the LCMB air con install crew." },
     { n: "Joe", role: "Air conditioning tech", lic: "", photo: "../assets/team-joe.jpg", d: "Part of the LCMB air con install crew." }
   ],
 
