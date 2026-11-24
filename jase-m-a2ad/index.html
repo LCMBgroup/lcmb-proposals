@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="../assets/grp_sq_white.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LCMB Group – Battery proposal for Jase M</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --brand:#1B3664; --brand-2:#26477F; --brand-soft:#EAF0F8; --brand-ink:#0F2347; --grey:#5A5A5C;
+    --ink:#15151F; --muted:#5F5F72; --line:#E4E3EE; --bg:#F7F7FB; --ok:#0F8A5F; --warn:#B45309;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.mont{font-family:Montserrat,Inter,sans-serif}
+  a{color:var(--brand)}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+
+  /* top bar */
+  .bar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .bar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .logo{font-family:Montserrat,Inter,sans-serif;font-weight:800;letter-spacing:.32em;color:var(--brand);font-size:15px}
+  .bar nav{display:flex;gap:22px;font-size:13.5px}
+  .bar nav a{color:var(--muted);text-decoration:none;font-weight:500}
+  .bar nav a:hover{color:var(--brand)}
+  .btn{display:inline-flex;align-items:center;gap:8px;border:0;cursor:pointer;font:600 14px Inter;border-radius:999px;padding:11px 20px;background:var(--brand);color:#fff;text-decoration:none;transition:.15s}
+  .btn:hover{background:var(--brand-2)}
+  .btn.ghost{background:#fff;color:var(--brand);border:1.5px solid var(--brand)}
+  @media(max-width:760px){.bar nav{display:none}}
+
+  /* hero */
+  .hero{background:radial-gradient(1100px 420px at 90% -20%,#3B5E9E 0%,transparent 60%),var(--brand);color:#fff;padding:64px 0 120px}
+  .hero .eyebrow{font-size:12px;letter-spacing:.24em;opacity:.75;font-weight:600}
+  .hero h1{font-size:clamp(32px,5vw,52px);line-height:1.08;margin:14px 0 14px;font-weight:800;letter-spacing:-.01em}
+  .hero p{font-size:17px;opacity:.86;max-width:620px;margin:0}
+  .hero .meta{display:flex;flex-wrap:wrap;gap:28px;margin-top:34px;font-size:13.5px}
+  .hero .meta b{display:block;font-size:11px;letter-spacing:.18em;opacity:.65;font-weight:600;margin-bottom:3px}
+
+  section{padding:56px 0}
+  .lift{margin-top:-84px;padding-top:0;position:relative;z-index:2}
+  .card{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 1px 2px rgba(15,35,71,.04),0 10px 30px rgba(15,35,71,.05)}
+  .kicker{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--brand);font-weight:700;margin:0 0 8px}
+  h2{font-size:clamp(24px,3vw,32px);margin:0 0 10px;font-weight:800;letter-spacing:-.01em}
+  .lead{color:var(--muted);max-width:640px;margin:0 0 28px}
+
+  /* facts */
+  .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:0;padding:8px}
+  .fact{padding:22px 22px}
+  .fact+.fact{border-left:1px solid var(--line)}
+  .fact .n{font-family:Montserrat,Inter,sans-serif;font-size:28px;font-weight:800;color:var(--brand);line-height:1.1}
+  .fact .l{font-size:13.5px;color:var(--muted);margin-top:4px}
+  @media(max-width:760px){.facts{grid-template-columns:1fr 1fr}.fact:nth-child(3){border-left:0}.fact:nth-child(n+3){border-top:1px solid var(--line)}}
+  .goals{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+  .goal{display:flex;gap:14px;padding:20px;background:#fff;border:1px solid var(--line);border-radius:14px}
+  .goal .ic{flex:none;width:40px;height:40px;border-radius:12px;background:var(--brand-soft);display:grid;place-items:center}
+  .goal b{display:block;margin-bottom:2px}
+  .goal span{color:var(--muted);font-size:14px}
+  @media(max-width:760px){.goals{grid-template-columns:1fr}}
+
+  /* option switch */
+  .seg{display:inline-flex;background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px;margin-bottom:22px}
+  .seg button{border:0;background:transparent;font:600 14px Inter;color:var(--muted);padding:10px 22px;border-radius:999px;cursor:pointer;transition:.15s}
+  .seg button.on{background:var(--brand);color:#fff}
+  .opt{display:grid;grid-template-columns:1.05fr 1fr;overflow:hidden}
+  .opt .left{padding:32px;background:linear-gradient(160deg,var(--brand) 0%,#0F2347 100%);color:#fff;position:relative}
+  .opt .left .tag{display:inline-block;font-size:11px;letter-spacing:.18em;font-weight:700;background:rgba(255,255,255,.14);padding:5px 10px;border-radius:999px}
+  .opt .left h3{font-size:28px;margin:14px 0 4px;font-weight:800}
+  .opt .left .cap{opacity:.8}
+  .price{font-family:Montserrat,Inter,sans-serif;font-size:52px;font-weight:800;line-height:1;margin-top:30px;letter-spacing:-.02em}
+  .price small{display:block;font:500 13px Inter;opacity:.75;margin-top:8px;letter-spacing:0}
+  .battery{display:flex;gap:8px;margin-top:28px;align-items:flex-end}
+  .cell{width:44px;height:92px;border-radius:9px;background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.35);position:relative;overflow:hidden;transition:.3s}
+  .cell::after{content:"";position:absolute;left:0;right:0;bottom:0;height:100%;background:linear-gradient(0deg,#7CF0C2,#3BD69A);opacity:.95;transition:height .5s}
+  .cell.off{opacity:.25}.cell.off::after{height:0}
+  .inv{width:56px;height:70px;border-radius:9px;background:rgba(255,255,255,.92);color:var(--brand);font:700 10px Inter;display:grid;place-items:center;text-align:center;line-height:1.2}
+  .opt .right{padding:32px}
+  .opt ul{list-style:none;margin:0;padding:0}
+  .opt li{display:flex;gap:10px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:15px}
+  .opt li:last-child{border-bottom:0}
+  .chk{flex:none;width:20px;height:20px;border-radius:50%;background:var(--brand-soft);display:grid;place-items:center;margin-top:2px}
+  .fit{margin-top:18px;background:var(--brand-soft);border-radius:12px;padding:14px 16px;font-size:14.5px;color:#2c2a4a}
+  @media(max-width:820px){.opt{grid-template-columns:1fr}}
+
+  table.cmp{width:100%;border-collapse:collapse;font-size:14.5px}
+  table.cmp th,table.cmp td{padding:14px 18px;text-align:left;border-bottom:1px solid var(--line)}
+  table.cmp th{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;background:#FBFBFE}
+  table.cmp td:first-child{color:var(--muted)}
+  table.cmp tr:last-child td{border-bottom:0;font-weight:700}
+  table.cmp .sel{background:var(--brand-soft)}
+  .tablewrap{overflow-x:auto}
+
+  /* calculator */
+  .calc{display:grid;grid-template-columns:1.2fr 1fr;gap:0;overflow:hidden}
+  .calc .apps{padding:26px;display:grid;grid-template-columns:1fr 1fr;gap:10px;align-content:start}
+  .app{display:flex;align-items:center;gap:10px;border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;cursor:pointer;user-select:none;transition:.15s;background:#fff}
+  .app input{display:none}
+  .app .box{flex:none;width:20px;height:20px;border-radius:6px;border:1.5px solid #c9c7da;display:grid;place-items:center;transition:.15s}
+  .app.on{border-color:var(--brand);background:var(--brand-soft)}
+  .app.on .box{background:var(--brand);border-color:var(--brand)}
+  .app .t{font-size:14px;font-weight:600;line-height:1.25}
+  .app .w{font-size:12px;color:var(--muted);font-weight:400}
+  .app.heavy .w{color:var(--warn)}
+  .calc .out{padding:30px;background:#0F1B33;color:#fff;display:flex;flex-direction:column;justify-content:center}
+  .calc .out .lbl{font-size:12px;letter-spacing:.18em;opacity:.65;font-weight:600}
+  .hours{font-family:Montserrat,Inter,sans-serif;font-size:64px;font-weight:800;line-height:1;margin:10px 0 4px}
+  .hours small{font-size:20px;font-weight:700;opacity:.8}
+  .gauge{height:10px;background:rgba(255,255,255,.12);border-radius:999px;overflow:hidden;margin:16px 0 8px}
+  .gauge i{display:block;height:100%;background:linear-gradient(90deg,#3BD69A,#7CF0C2);border-radius:999px;transition:width .4s}
+  .both{display:flex;gap:12px;margin-top:18px}
+  .both div{flex:1;background:rgba(255,255,255,.07);border-radius:12px;padding:12px 14px;font-size:13px}
+  .both b{display:block;font-family:Montserrat,Inter,sans-serif;font-size:20px}
+  .both .cur{outline:1.5px solid #7CF0C2}
+  .fine{font-size:12px;opacity:.6;margin-top:16px;line-height:1.5}
+  .warnbox{display:none;margin-top:14px;font-size:13px;background:rgba(255,190,90,.15);border:1px solid rgba(255,190,90,.4);color:#FFD9A0;border-radius:10px;padding:10px 12px}
+  @media(max-width:860px){.calc{grid-template-columns:1fr}.calc .apps{grid-template-columns:1fr 1fr}}
+  @media(max-width:480px){.calc .apps{grid-template-columns:1fr}}
+
+  /* add-ons */
+  .addons{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .addon{display:flex;gap:14px;align-items:flex-start;padding:20px;cursor:pointer;user-select:none;transition:.15s}
+  .addon.on{border-color:var(--brand);box-shadow:0 0 0 1.5px var(--brand) inset}
+  .addon .box{flex:none;width:22px;height:22px;border-radius:7px;border:1.5px solid #c9c7da;display:grid;place-items:center;margin-top:2px}
+  .addon.on .box{background:var(--brand);border-color:var(--brand)}
+  .addon b{display:block}
+  .addon span{color:var(--muted);font-size:14px}
+  .addon .p{margin-left:auto;font-family:Montserrat,Inter,sans-serif;font-weight:700;white-space:nowrap}
+  .total{display:flex;justify-content:space-between;align-items:center;margin-top:18px;padding:20px 24px}
+  .total .big{font-family:Montserrat,Inter,sans-serif;font-size:30px;font-weight:800;color:var(--brand)}
+  @media(max-width:760px){.addons{grid-template-columns:1fr}}
+
+  /* steps */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;counter-reset:s}
+  .step{padding:22px;counter-increment:s}
+  .step::before{content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--brand);color:#fff;font:700 14px Montserrat,Inter,sans-serif;margin-bottom:14px}
+  .step b{display:block;margin-bottom:4px}
+  .step span{color:var(--muted);font-size:14px}
+  @media(max-width:860px){.steps{grid-template-columns:1fr 1fr}}
+
+  /* faq */
+  details{border-bottom:1px solid var(--line);padding:4px 0}
+  details:last-child{border-bottom:0}
+  summary{cursor:pointer;list-style:none;padding:16px 22px;font-weight:600;display:flex;justify-content:space-between;align-items:center}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font:400 22px Inter;color:var(--brand);transition:.2s}
+  details[open] summary::after{transform:rotate(45deg)}
+  details p{margin:0;padding:0 22px 18px;color:var(--muted);font-size:15px}
+
+  /* accept */
+  .accept{display:grid;grid-template-columns:1fr 1fr;overflow:hidden}
+  .accept .l{padding:32px}
+  .accept .r{padding:32px;background:var(--brand-soft)}
+  label.f{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:16px 0 6px}
+  input.tx{width:100%;padding:13px 14px;border:1.5px solid var(--line);border-radius:10px;font:500 15px Inter;background:#fff}
+  input.tx:focus{outline:none;border-color:var(--brand)}
+  .agree{display:flex;gap:10px;align-items:flex-start;margin-top:16px;font-size:14px;color:var(--muted);cursor:pointer}
+  .agree input{margin-top:3px;accent-color:var(--brand);width:16px;height:16px}
+  .summary-row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(24,0,173,.12);font-size:15px}
+  .summary-row:last-of-type{border-bottom:0}
+  .summary-row b{font-weight:700}
+  .done{display:none;text-align:center;padding:44px 30px}
+  .done .tick{width:64px;height:64px;border-radius:50%;background:var(--ok);display:grid;place-items:center;margin:0 auto 16px}
+  .err{color:#B42318;font-size:13.5px;margin-top:10px;display:none}
+  @media(max-width:820px){.accept{grid-template-columns:1fr}}
+
+  .contact{display:flex;gap:20px;align-items:center;padding:26px}
+  .contact img{width:84px;height:84px;border-radius:50%}
+  .contact .n{font-family:Montserrat,Inter,sans-serif;font-weight:800;font-size:19px}
+  .contact .r{color:var(--muted);font-size:14px;margin-bottom:6px}
+  .contact .ln{font-size:14.5px}
+  .luke{display:flex;gap:26px;align-items:center;padding:26px 30px}
+  .luke img{width:120px;height:120px;border-radius:50%;flex:none;box-shadow:0 0 0 4px #fff,0 0 0 6px var(--brand-soft)}
+  @media(max-width:640px){.luke{flex-direction:column;text-align:center}}
+  .sys{display:grid;grid-template-columns:1fr 1.1fr;overflow:hidden}
+  .sysimg{display:flex;gap:26px;justify-content:center;align-items:flex-end;padding:34px 24px 26px;background:radial-gradient(400px 260px at 50% 60%,#ffffff 0%,#ECEAF8 100%)}
+  .sysimg figure{margin:0;text-align:center}
+  .sysimg img{height:300px;width:auto;filter:drop-shadow(0 18px 22px rgba(15,35,71,.18))}
+  .sysimg figure:nth-child(2) img{height:240px}
+  .sysimg figcaption{font-size:12px;color:var(--muted);margin-top:10px;font-weight:500}
+  .sysinfo{padding:30px}
+  .part{display:flex;gap:14px;padding:12px 0;border-bottom:1px dashed var(--line)}
+  .part:last-of-type{border-bottom:0}
+  .part .pn{flex:none;width:28px;height:28px;border-radius:50%;background:var(--brand);color:#fff;display:grid;place-items:center;font:700 13px Montserrat,Inter,sans-serif}
+  .part b{display:block}
+  .part span{color:var(--muted);font-size:14px}
+  @media(max-width:820px){.sys{grid-template-columns:1fr}.sysimg img{height:220px}.sysimg figure:nth-child(2) img{height:180px}}
+  .navlogo{height:42px;width:auto}
+  .herogrid{display:grid;grid-template-columns:1.35fr .65fr;gap:40px;align-items:center}
+  .heromark{width:64px;height:auto;margin-bottom:22px;opacity:.95}
+  .heroimg{margin:0;position:relative;justify-self:end;width:100%;max-width:330px}
+  .heroimg img{width:100%;aspect-ratio:37/54;object-fit:cover;border-radius:22px;display:block;box-shadow:0 24px 50px rgba(0,0,0,.28);border:4px solid rgba(255,255,255,.9)}
+  .heroimg figcaption{position:absolute;left:16px;right:16px;bottom:16px;background:rgba(255,255,255,.95);color:var(--ink);border-radius:14px;padding:10px 14px;font-size:12.5px;color:var(--muted)}
+  .heroimg figcaption b{display:block;color:var(--ink);font-family:Montserrat,Inter,sans-serif;font-size:15px}
+  @media(max-width:820px){.herogrid{grid-template-columns:1fr}.heroimg{justify-self:start;max-width:260px}}
+  .appcard{display:grid;grid-template-columns:.8fr 1.2fr;overflow:hidden}
+  .phone{background:linear-gradient(160deg,var(--brand),#0F2347);display:grid;place-items:center;padding:36px 20px}
+  .scr{width:230px;border-radius:34px;background:#0B1424;border:8px solid #1d2638;box-shadow:0 30px 60px rgba(0,0,0,.35);padding:18px 16px 14px;color:#fff;font-size:12px}
+  .ph-top{display:flex;justify-content:space-between;opacity:.8;font-weight:600;margin-bottom:12px}
+  .ph-top span:first-child{font-family:Montserrat,Inter,sans-serif;font-weight:800;opacity:1}
+  .ph-soc{display:grid;place-items:center;margin:6px 0 14px}
+  .ring{width:118px;height:118px;border-radius:50%;background:conic-gradient(#3BD69A 0 86%,rgba(255,255,255,.12) 86% 100%);display:grid;place-items:center;position:relative}
+  .ring::before{content:"";position:absolute;inset:10px;border-radius:50%;background:#0B1424}
+  .ring b,.ring small{position:relative;display:block;text-align:center}
+  .ring b{font:800 24px Montserrat,Inter,sans-serif;margin-top:6px}.ring small{opacity:.65;margin-top:-26px}
+  .ph-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .ph-grid div{background:rgba(255,255,255,.07);border-radius:10px;padding:8px 10px}
+  .ph-grid small{display:block;opacity:.6}.ph-grid b{font-size:14px}
+  .ph-bars{display:flex;gap:6px;align-items:flex-end;height:54px;margin:14px 2px 6px}
+  .ph-bars i{flex:1;background:linear-gradient(0deg,#F5B83D,#FFD877);border-radius:4px 4px 0 0}
+  .ph-cap{text-align:center;opacity:.45;font-size:10px;margin-top:6px}
+  .appinfo{padding:32px}
+  .feat{display:grid;grid-template-columns:1fr 1fr;gap:16px 22px}
+  .feat b{display:block;font-size:15px;margin-bottom:2px}
+  .feat span{color:var(--muted);font-size:14px}
+  @media(max-width:860px){.appcard{grid-template-columns:1fr}.feat{grid-template-columns:1fr}}
+  .herologo{justify-self:end;background:#fff;border-radius:24px;padding:34px 34px 30px;width:100%;max-width:320px;text-align:center;box-shadow:0 24px 50px rgba(0,0,0,.25)}
+  .herologo img{width:190px;height:auto}
+  .hl-sub{margin-top:18px;font:800 19px Montserrat,Inter,sans-serif;letter-spacing:.06em;color:var(--brand);line-height:1.35}
+  .hl-sub span{font-size:12.5px;color:var(--grey);letter-spacing:.08em;font-weight:700}
+  @media(max-width:820px){.herologo{justify-self:start;max-width:260px}}
+  .hero{position:relative;overflow:hidden}
+  .hero .wrap{position:relative;z-index:1}
+  .herogrid{grid-template-columns:1fr !important}
+  .herogrid>div{max-width:680px}
+  .herofull{height:84px;width:auto;margin-bottom:34px;display:block}
+  .watermark{position:absolute;right:-90px;top:50%;transform:translateY(-58%);width:480px;opacity:.05;pointer-events:none}
+  @media(max-width:820px){.watermark{width:300px;right:-80px}.herofull{height:46px}}
+  .team{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:22px}
+  .member{padding:26px 22px;text-align:center}
+  .member .av{width:96px;height:96px;border-radius:50%;margin:0 auto 14px;background:linear-gradient(150deg,var(--brand),#0F2347);display:grid;place-items:center;overflow:hidden;box-shadow:0 0 0 4px #fff,0 0 0 6px var(--brand-soft)}
+  .member .av span{color:#fff;font:800 34px Montserrat,Inter,sans-serif}
+  .member .av img{width:100%;height:100%;object-fit:cover}
+  .member b{display:block;font-family:Montserrat,Inter,sans-serif;font-size:19px;margin:8px 0 6px}
+  .member>span{color:var(--muted);font-size:14px}
+  .badge{display:inline-block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;background:var(--brand);color:#fff;border-radius:999px;padding:4px 10px}
+  .badge.soft{background:var(--brand-soft);color:var(--brand)}
+  .lead-m{border:1.5px solid var(--brand)}
+  @media(max-width:900px){.team{grid-template-columns:1fr 1fr}}
+  @media(max-width:480px){.team{grid-template-columns:1fr}}
+  .nosub{display:flex;gap:16px;align-items:center;background:linear-gradient(120deg,var(--brand),#0F2347);color:#fff;border-radius:16px;padding:18px 22px;margin:4px 0 6px}
+  .nosub .ic{flex:none;width:50px;height:50px;border-radius:14px;background:rgba(255,255,255,.14);display:grid;place-items:center}
+  .nosub b{display:block;font:800 19px Montserrat,Inter,sans-serif}
+  .nosub span{opacity:.82;font-size:14.5px}
+  .lic{font-size:12.5px;font-weight:700;color:var(--brand);background:var(--brand-soft);border-radius:10px;padding:7px 10px;margin:0 0 10px;line-height:1.35}
+  .lic small{font-weight:500;color:var(--muted);font-size:11.5px}
+  footer{padding:34px 0 50px;color:var(--muted);font-size:13px;text-align:center}
+  footer .logo{display:block;margin-bottom:6px}
+  .note{font-size:13px;color:var(--muted);margin-top:12px}
+  @media(max-width:480px){.seg button{padding:10px 10px;font-size:13px;white-space:nowrap}}
+</style>
+<link rel="stylesheet" href="../assets/theme.css?v=8">
+</head>
+<body>
+
+<div class="bar"><div class="wrap">
+  <img class="navlogo" src="../assets/grp.png" alt="LCMB Group">
+  <nav><a href="#options">Your price</a><a href="#why">Why LCMB</a><a href="#more">More detail</a></nav>
+  <span><a class="btn pdfbtn" href="#" onclick="return lcmbPDF()">PDF</a><a class="btn" href="#accept">Book inspection</a></span>
+</div></div>
+
+<header class="hero compact"><img src="../assets/grp_sq_white.png" alt="" class="watermark"><div class="wrap">
+  <h1>Jase, here's your battery quote</h1>
+  <div class="hmeta">Jase M · 18 Hillstone Crescent, Maudsland QLD 4210 · 25 November 2026</div>
+  <a class="grate" href="https://search.google.com/local/reviews?placeid=ChIJhfSCf9sDkWsRmFoEpLR64SE" target="_blank" rel="noopener"><span class="g"><svg width="14" height="14" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg></span><span class="stars">★★★★★</span> 4.9 from 460+ Google reviews</a>
+</div></header>
+
+<!-- options -->
+<section id="options" style="padding-top:20px"><div class="wrap">
+  <div class="seg" role="tablist">
+    <button data-opt="1">Option 1 ★</button>
+    <button data-opt="2">Option 2</button>
+  </div>
+  <div class="card opt">
+    <div class="left">
+      <span class="tag" id="oTag">OPTION 1 · RECOMMENDED</span>
+      <h3 id="oName">GoodWe 17.7kWh battery</h3>
+      <div class="cap" id="oCap">18kWh nominal · 17.7kWh usable</div>
+      <div class="price" id="oPrice">$11,200<small>including GST, with applicable rebates already applied</small></div>
+      <div class="battery" aria-hidden="true">
+        <div class="inv" id="invTxt">GoodWe<br>hybrid<br>inverter</div>
+        <div class="cell" id="cell1"></div><div class="cell" id="cell2"></div><div class="cell" id="cell3"></div>
+      </div>
+    </div>
+    <div class="right">
+      <ul id="oList"></ul>
+      <div class="fit" id="oFit"></div>
+    </div>
+  </div>
+</div></section>
+
+
+<div hidden><div id="addons"></div><div id="tot"></div><div id="totNote"></div></div>
+
+<!-- finance -->
+<section style="padding-top:0;padding-bottom:0"><div class="wrap">
+  <details class="card" id="finance">
+    <summary><span class="fi"><img src="../assets/brighte-logo.svg" alt="Brighte"></span><span><b>Looking to finance through Brighte?</b><small>See your weekly repayment <span id="fFrom"></span></small></span></summary>
+    <div class="fbody">
+      <div>
+        <p class="flabel">Brighte Green Loan · 8.49% p.a. fixed</p>
+        <div class="fprod" hidden><button type="button" data-p="green">Green Loan 8.49% p.a.</button></div>
+        <p class="flabel">Repayment term</p>
+        <div class="fterms"></div>
+        <p id="fNote"></p>
+      </div>
+      <div class="fout">
+        <div class="k">Estimated repayment</div>
+        <div id="fWeek">$0</div>
+        <p id="fFort"></p>
+      </div>
+      <details class="fdisc"><summary>Indicative estimate only. Tap for important information.</summary><p>Indicative estimate only, not a quote or an offer of credit. Based on Brighte's published rates and fees as at 1 October 2026, applied to the price of the option selected above. Brighte repayments are fortnightly; the weekly figure is the fortnightly repayment divided by two and includes the account-keeping fee. ^Comparison rate based on a $30,000 unsecured loan over 5 years with fortnightly repayments; different terms, fees or loan amounts may give a different comparison rate. Your actual interest rate, establishment fee and repayments are set by Brighte if your application is approved. Credit is provided by Brighte Capital Pty Ltd, Australian Credit Licence 508217. All applications are subject to Brighte's credit approval; fees, terms and conditions apply. More at <a href="https://brighte.com.au" target="_blank" rel="noopener">brighte.com.au</a>, or ask Luke.</p></details>
+    </div>
+  </details>
+</div></section>
+
+<!-- accept -->
+<section id="accept" style="padding-top:10px"><div class="wrap">
+  <p class="kicker">Book your site inspection</p>
+  <h2>Book your free site inspection</h2>
+  <p class="lead">Tap the button below to accept your quote and pick a time for your free site inspection. Your final price is confirmed on site, before any work starts.</p>
+  <div class="card">
+    <div class="accept" id="acceptForm">
+      <div class="l">
+        <div class="seg" style="margin:0" id="seg2">
+          <button data-opt="1">Option 1</button>
+          <button data-opt="2">Option 2</button>
+        </div>
+        <input type="hidden" id="nm" value="Jase M"><input type="hidden" id="em" value="j_mck81@hotmail.com"><input type="hidden" id="ph" value=""><input type="checkbox" id="ag" checked hidden>
+        <p class="oneTap">Tap below, then pick a time that suits you from our available times. It's free, takes about an hour, and there are no forms to fill in.</p>
+        <div class="err" id="err">Something went wrong. Please call Luke on 0483 927 024.</div>
+        <button class="btn" style="margin-top:20px;width:100%;justify-content:center;padding:15px" id="go">Book my free site inspection</button>
+      </div>
+      <div class="r">
+        <div style="font-weight:700;margin-bottom:8px">Your selection</div>
+        <div class="summary-row"><span>System</span><b id="sSys">Option 1 · GoodWe · 17.7kWh usable battery</b></div>
+        <div class="summary-row"><span>Battery price</span><b id="sBat">$11,200</b></div>
+        <div class="summary-row"><span>Extras</span><b id="sExt">None</b></div>
+        <div class="summary-row" style="font-size:17px"><span>Estimated total</span><b id="sTot" style="color:var(--brand)">$11,200</b></div>
+        <p class="note">Inc GST, after rebates. Preliminary until site inspection.</p>
+      </div>
+    </div>
+    <div class="done" id="done">
+      <div class="tick"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+      <h2 style="font-size:26px">Thanks, <span id="dName"></span>!</h2>
+      <p class="lead" style="margin:0 auto 18px" id="doneLead">Luke has your acceptance and will be in touch shortly to book your site inspection.</p>
+      <div class="card" style="max-width:520px;margin:0 auto;text-align:left;padding:18px 20px;font-size:14.5px;white-space:pre-line" id="conf"></div>
+      <div style="display:none;gap:10px;justify-content:center;margin-top:18px;flex-wrap:wrap" id="doneBtns">
+        <button class="btn" id="copy">Copy confirmation</button>
+        <a class="btn ghost" id="mail" href="#">Email it to Luke</a>
+      </div>
+      <p class="note">Email: admin@lcmbgroup.com.au · Phone: 0483 927 024</p>
+    </div>
+  </div>
+</div></section>
+
+<div class="wrap pdfline"><a href="#" onclick="return lcmbPDF()">Download quote (PDF)</a></div>
+
+<!-- why LCMB -->
+<section id="why" style="padding-top:10px"><div class="wrap">
+  <div class="trust">
+    <div><b>Locally owned &amp; owner-run</b><span>Talk to Luke directly, not a call centre.</span></div>
+    <div><b>No subcontractors</b><span>Our own licensed, SAA-accredited crew.</span></div>
+    <div><b>10-year workmanship warranty</b><span>We stand behind every install.</span></div>
+  </div>
+  <div class="card lukenote">
+    <img src="../assets/luke.png" alt="Luke Muir">
+    <div><p>"Good speaking with you today, Jase. You worked out you need about 13.5kWh, so the GoodWe option gives you a bit of room on top of that, with full-home backup. Book the site inspection and I'll confirm the final design and price."</p><b>Luke Muir</b> <span>· Director, LCMB Group · <a href="tel:0483927024">0483 927 024</a></span></div>
+  </div>
+  <div class="rv-mini">
+    <div class="card review"><div class="stars">★★★★★</div><p>Luke, Harry and the team installed my roof top panels and a large battery on Monday morning. They arrived on time, didn't muck around and completed the job by 1pm. No mess and no hassles. Highly recommended.</p><div class="who"><i>A</i><div><b>Andrew C.</b><small>Solar + battery</small></div></div></div>
+    <div class="card review"><div class="stars">★★★★★</div><p>Guys installed battery, did a great job. Knew what they were doing. Quality install. Cleaned up the mess. Shout out to Will and Mack.</p><div class="who"><i>M</i><div><b>Mark A.</b><small>Battery install</small></div></div></div>
+    <div class="card review"><div class="stars">★★★★★</div><p>Luke and the crew at LCMB did a fantastic job installing solar and battery at my home. The attention to detail and ability to accommodate some of the nuances of what we needed were amazing. On install day, the crew showed up on time, did the job as discussed, cleaned up after themselves, and gave me a full run through of the new system. Highly recommend the team at LCMB.</p><div class="who"><i>G</i><div><b>The Grant family</b><small>Solar + battery</small></div></div></div>
+    <div class="card review"><div class="stars">★★★★★</div><p>From the very beginning, Luke was fantastic&hellip; A huge shout-out to Harry, Will and Mack, who worked all day and into the evening until 7pm to make sure everything was completed properly. They were professional, friendly and took the time to explain how our new solar and battery system works&hellip; Thank you Luke, Harry, Will, Mack and the entire LCMB team!</p><div class="who"><i>O</i><div><b>Oliviann</b><small>Solar + battery</small></div></div></div>
+  </div>
+  <p style="text-align:center;margin:16px 0 0"><a class="grate" href="https://search.google.com/local/reviews?placeid=ChIJhfSCf9sDkWsRmFoEpLR64SE" target="_blank" rel="noopener"><span class="g"><svg width="14" height="14" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg></span><span class="stars">★★★★★</span> 4.9 from 460+ Google reviews</a></p>
+</div></section>
+
+<!-- more detail -->
+<section id="more" style="padding-top:10px"><div class="wrap">
+  <p class="kicker">Want more detail?</p>
+  <h2>Tap to open</h2>
+  <div class="card accs">
+  <details class="acc" id="compare"><summary><span><b>Compare the options</b><small>Side-by-side specs and prices</small></span></summary><div class="accbody">
+
+  <div class="tablewrap">
+    <table class="cmp">
+      <tr><th></th><th class="c1">Option 1 · Recommended</th><th class="c2">Option 2</th></tr>
+      <tr><td>Hybrid inverter</td><td class="c1">GoodWe GW9.9K-EHA-G20 9.9kW single-phase hybrid inverter</td><td class="c2">FoxESS KH9.9 9.99kW single-phase hybrid inverter</td></tr>
+      <tr><td>Battery</td><td class="c1">2 × GoodWe GW9.0-BAT-D-G20</td><td class="c2">Fox ESS 1 × CQ7-M + 2 × CQ7-S</td></tr>
+      <tr><td>Battery capacity</td><td class="c1">18kWh nominal · 17.7kWh usable</td><td class="c2">20.88kWh</td></tr>
+      <tr><td>Backup</td><td class="c1">Full-home, subject to final design</td><td class="c2">Selected circuits, confirmed at inspection</td></tr>
+      <tr><td>Existing solar</td><td class="c1">Kept and integrated</td><td class="c2">Kept and integrated</td></tr>
+      <tr><td>Online monitoring</td><td class="c1">GoodWe SEMS+</td><td class="c2">Online monitoring</td></tr>
+      <tr><td>Price (inc GST, after rebates)</td><td class="c1">$11,200</td><td class="c2">$11,000</td></tr>
+    </table>
+  </div></div></details>
+  <details class="acc" id="blackout"><summary><span><b>Blackout calculator</b><small>How long would your home keep running?</small></span></summary><div class="accbody">
+  <p class="lead">Tick what you'd want on during a night-time blackout. We'll estimate how long a fully charged battery lasts with no solar coming in.</p>
+  <div class="card calc">
+    <div class="apps" id="apps"></div>
+    <div class="out">
+      <div class="lbl" id="calcLbl">OPTION 1 · 17.7kWh USABLE</div>
+      <div class="hours" id="hrs">—</div>
+      <div id="load" style="opacity:.75;font-size:14px">Estimated load</div>
+      <div class="gauge"><i id="gauge" style="width:0"></i></div>
+      <div class="both">
+        <div id="b1">Option 1<b id="h1">—</b></div>
+        <div id="b2">Option 2<b id="h2">—</b></div>
+      </div>
+      <div class="warnbox" id="warn">High-load appliances drain the battery fast. In a blackout these are best run one at a time, or switched off.</div>
+      <div class="fine">Estimates only, based on typical average running loads for each appliance. They assume the battery starts full and there's no solar coming in (e.g. overnight). During the day, your solar keeps topping the battery up. Real results depend on your appliances and how you use them.</div>
+    </div>
+  </div>
+</div></details>
+  <details class="acc" id="team"><summary><span><b>Meet the team</b><small>The people who will turn up on the day</small></span></summary><div class="accbody"><div class="team">
+    <div class="card member lead-m">
+      <div class="av"><img src="../assets/harry.jpg" alt="Harry"></div>
+      <div class="badge">Lead installer · Licence holder</div>
+      <b>Harry</b>
+      <div class="lic">SAA accredited · S2068869<br><small>Solar + battery design &amp; install</small></div>
+      <span>Harry leads your installation on the day, from wiring and testing through to commissioning.</span>
+    </div>
+    <div class="card member">
+      <div class="av"><img src="../assets/luke.png" alt="Luke"></div>
+      <div class="badge">Licence holder</div>
+      <b>Luke</b>
+      <div class="lic">SAA accredited · S0379124<br><small>Solar + battery design &amp; install</small></div>
+      <span>Your main contact from quote to switch-on, and the one who'll come out for your site inspection.</span>
+    </div>
+    <div class="card member">
+      <div class="av"><img src="../assets/mack.jpg" alt="Mack"></div>
+      <div class="badge soft">Solar installer · Electrician</div>
+      <b>Mack</b>
+      <span>Electrician and solar installer on the crew, working alongside Harry on the day.</span>
+    </div>
+    <div class="card member">
+      <div class="av"><img src="../assets/will.jpg" alt="Will"></div>
+      <div class="badge soft">Solar installer · Electrician</div>
+      <b>Will</b>
+      <span>Electrician and solar installer on the crew, working alongside Harry on the day.</span>
+    </div>
+  </div>
+</div></details>
+  <details class="acc"><summary><span><b>What happens next</b><small>From yes to switched on</small></span></summary><div class="accbody"><div class="steps">
+    <div class="card step"><b>Book your inspection</b><span>Choose your option, tap Book my free site inspection and pick a time. It takes 30 seconds.</span></div>
+    <div class="card step"><b>Site inspection</b><span>We check your solar, switchboard, roof and battery location.</span></div>
+    <div class="card step"><b>Final price and approvals</b><span>We confirm your price and handle network approval and the rebate paperwork.</span></div>
+    <div class="card step"><b>Install and switch on</b><span>We install, test and commission the system, then set up your monitoring.</span></div>
+  </div>
+</div></details>
+  <details class="acc" id="faq"><summary><span><b>Common questions</b><small>Rebates, backup, battery location and more</small></span></summary><div class="accbody">
+  <div class="card" style="margin-top:20px">
+    <details><summary>Are the rebates already included?</summary><p>Yes. Both prices include GST, with the applicable rebates included, subject to site inspection.</p></details>
+    <details><summary>What does "full-home backup" actually mean?</summary><p>Full-home backup means the home's circuits can be connected to the backup supply during a grid outage. It doesn't mean every high-load appliance can operate at the same time. Backup time depends on the appliances running, the battery's charge and available solar.</p></details>
+    <details><summary>What happens to my existing solar?</summary><p>Your existing solar stays in place and is integrated with the new battery system. Luke will check its size, age, condition and inverter compatibility at the site inspection.</p></details>
+    <details><summary>Why is the price "preliminary"?</summary><p>Before confirming the final system, Luke will check the size, age and condition of your existing solar system, existing inverter compatibility, your switchboard and electrical supply, the battery and inverter location, cable routes, your backup requirements, and network approval and rebate eligibility. He'll confirm the final equipment, design and price before anything proceeds.</p></details>
+    <details><summary>Can I keep an eye on how it's performing?</summary><p>Yes. Every option includes online system monitoring (GoodWe SEMS+ on the GoodWe options).</p></details>
+    <details><summary>Who will actually install my system?</summary><p>Our own LCMB Group team. We don't use subcontractors. Your install is led by Harry, our SAA-accredited lead installer (S2068869), with Mack and Will on the crew.</p></details>
+  </div>
+</div></details>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+</div></section>
+
+<footer><img src="../assets/grp_white.png" alt="LCMB Group" style="height:60px;margin-bottom:12px"><br>Gold Coast · Brisbane · NSW · www.lcmbgroup.com.au</footer>
+
+<script>
+const OPTS={
+  1:{"cells": 2, "inv": "GoodWe<br>hybrid<br>inverter", "tag": "OPTION 1 · RECOMMENDED", "name": "GoodWe 17.7kWh battery", "cap": "18kWh nominal · 17.7kWh usable", "kwh": 17.7, "price": 11200, "sum": "GoodWe · 17.7kWh usable battery", "clbl": "OPTION 1 · 17.7kWh USABLE", "list": ["Integration with your existing solar system", "GoodWe GW9.9K-EHA-G20 9.9kW single-phase hybrid inverter", "Single-phase assumed – confirmed at site inspection", "2 × GoodWe GW9.0-BAT-D-G20 battery modules (18kWh nominal, 17.7kWh usable)", "Full-home backup capability, subject to final design", "GoodWe SEMS+ monitoring", "Installation, testing and commissioning"], "fit": "<b>Luke's pick.</b> More than your calculated 13.5kWh, so you've got some room rather than a system that ends up too small."},
+  2:{"cells": 3, "inv": "FoxESS<br>hybrid<br>inverter", "tag": "OPTION 2 · FOX ESS", "name": "Fox ESS 20.88kWh battery", "cap": "20.88kWh battery", "kwh": 20.88, "price": 11000, "sum": "Fox ESS · 20.88kWh battery", "clbl": "OPTION 2 · 20.88kWh", "list": ["Integration with your existing solar system", "FoxESS KH9.9 9.99kW single-phase hybrid inverter", "Single-phase assumed – confirmed at site inspection", "Fox ESS CQ7 battery: 1 × CQ7-M + 2 × CQ7-S (20.88kWh)", "Selected-circuit backup", "Online system monitoring", "Installation, testing and commissioning"], "fit": "<b>The more economical option,</b> if your main goal is cutting overnight grid use. Backup covers selected circuits."}
+};
+// typical average running loads (watts) — estimates
+const APPS=[
+  {id:"fridge",t:"Fridge / freezer",w:60,on:true},
+  {id:"lights",t:"LED lights",w:100,on:true},
+  {id:"wifi",t:"Wi-fi and modem",w:15,on:true},
+  {id:"tv",t:"TV",w:100,on:true},
+  {id:"dev",t:"Phones and laptops",w:50,on:false},
+  {id:"fans",t:"Ceiling fans",w:60,on:false},
+  {id:"pool",t:"Pool pump",w:750,on:false,heavy:true},
+  {id:"split",t:"Split system air con",w:1000,on:false,heavy:true},
+  {id:"oven",t:"Cooktop / oven",w:1500,on:false,heavy:true},
+  {id:"hw",t:"Electric hot water",w:3600,on:false,heavy:true}
+];
+const ADDONS=[];
+let cur=2; const picked=new Set();
+const $=s=>document.querySelector(s);
+const fmt=n=>"$"+n.toLocaleString("en-AU");
+const chk='<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1B3664" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';
+const chkW='<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';
+
+function setOpt(n){
+  cur=n; const o=OPTS[n];
+  document.querySelectorAll(".seg button").forEach(b=>b.classList.toggle("on",+b.dataset.opt===n));
+  $("#oTag").textContent=o.tag; $("#oName").textContent=o.name; $("#oCap").textContent=o.cap;
+  $("#oPrice").innerHTML=fmt(o.price)+"<small>including GST, with applicable rebates already applied</small>";
+  $("#oList").innerHTML=o.list.map(x=>`<li><span class="chk">${chk}</span>${x}</li>`).join("");
+  $("#oFit").innerHTML=o.fit;
+  document.querySelectorAll(".battery .cell").forEach((c,i)=>c.classList.toggle("off",i>=o.cells)); $("#invTxt").innerHTML=o.inv;
+  Object.keys(OPTS).forEach(k=>document.querySelectorAll("table.cmp .c"+k).forEach(c=>c.classList.toggle("sel",+k===n)));
+  calc(); totals();
+}
+function hrsFor(kwh,w){ if(!w||!kwh) return null; return kwh*1000/w; }
+function fmtH(h){ if(h===null) return "—"; if(h>=48) return Math.round(h/24)+'<small> days</small>'; if(h>=10) return Math.round(h)+'<small> hrs</small>'; return h.toFixed(1)+'<small> hrs</small>'; }
+function plainH(h){ if(h===null) return "—"; if(h>=48) return Math.round(h/24)+" days"; if(h>=10) return Math.round(h)+" hrs"; return h.toFixed(1)+" hrs"; }
+function calc(){
+  const w=APPS.filter(a=>a.on).reduce((s,a)=>s+a.w,0);
+  const o=OPTS[cur];
+  $("#calcLbl").textContent=o.clbl;
+  $("#hrs").innerHTML=!o.kwh?'—':w?fmtH(hrsFor(o.kwh,w)):'0<small> hrs</small>';
+  $("#load").textContent=w?`Estimated load: about ${w.toLocaleString()} W`:"Tick something to start";
+  const h=hrsFor(o.kwh,w)||0; $("#gauge").style.width=Math.min(100,h/48*100)+"%";
+  Object.keys(OPTS).forEach(k=>{const h=$("#h"+k),b=$("#b"+k); if(h) h.textContent=plainH(hrsFor(OPTS[k].kwh,w)); if(b) b.classList.toggle("cur",cur===+k);});
+  $("#warn").style.display=APPS.some(a=>a.on&&a.heavy)?"block":"none";
+}
+function renderApps(){
+  $("#apps").innerHTML=APPS.map(a=>`<label class="app ${a.on?'on':''} ${a.heavy?'heavy':''}" data-id="${a.id}"><span class="box">${chkW}</span><span><span class="t">${a.t}</span><br><span class="w">~${a.w.toLocaleString()} W${a.heavy?' · high load':''}</span></span></label>`).join("");
+  document.querySelectorAll(".app").forEach(el=>el.onclick=()=>{const a=APPS.find(x=>x.id===el.dataset.id);a.on=!a.on;el.classList.toggle("on",a.on);calc();});
+}
+function renderAddons(){
+  $("#addons").innerHTML=ADDONS.map(a=>`<div class="card addon" data-id="${a.id}"><span class="box">${chkW}</span><div><b>${a.t}</b><span>${a.d}</span></div><div class="p">${a.p?fmt(a.p):'Price at inspection'}</div></div>`).join("");
+  document.querySelectorAll(".addon").forEach(el=>el.onclick=()=>{const id=el.dataset.id;picked.has(id)?picked.delete(id):picked.add(id);el.classList.toggle("on",picked.has(id));totals();});
+}
+function totals(){
+  const o=OPTS[cur]; const ex=ADDONS.filter(a=>picked.has(a.id));
+  const t=o.price+ex.reduce((s,a)=>s+(a.p||0),0); const tbc=ex.some(a=>!a.p);
+  $("#tot").textContent=fmt(t)+(tbc?" +":"");
+  $("#totNote").textContent=`Option ${cur}${ex.length?" + "+ex.map(a=>a.t.toLowerCase()).join(", "):""}, inc GST, after rebates${tbc?" (extras priced at inspection)":""}`;
+  $("#sSys").textContent=`Option ${cur} · ${o.sum}`; $("#sBat").textContent=fmt(o.price);
+  $("#sExt").textContent=ex.length?ex.map(a=>a.t+(a.p?` (${fmt(a.p)})`:" (TBC)")).join(", "):"None";
+  $("#sTot").textContent=fmt(t)+(tbc?" + extras":"");
+}
+document.querySelectorAll(".seg button").forEach(b=>b.onclick=()=>setOpt(+b.dataset.opt));
+$("#go").onclick=e=>{
+  e.preventDefault();
+  const nm=$("#nm").value.trim(), ph=$("#ph").value.trim();
+  if(!nm||!$("#ag").checked){ $("#err").style.display="block"; return; }
+  $("#err").style.display="none";
+  const o=OPTS[cur]; const ex=ADDONS.filter(a=>picked.has(a.id));
+  const d=new Date().toLocaleDateString("en-AU",{day:"numeric",month:"long",year:"numeric"});
+  const txt=`Proposal accepted – 18 Hillstone Crescent, Maudsland\nName: ${nm}${ph?"\nPhone: "+ph:""}\nDate: ${d}\nSystem: Option ${cur} – ${o.cap} – ${fmt(o.price)}\nExtras: ${ex.length?ex.map(a=>a.t).join(", "):"None"}\nEstimated total: ${$("#sTot").textContent} (inc GST, after rebates)\nPlease book my site inspection.`;
+  $("#conf").textContent=txt; $("#dName").textContent=nm.split(" ")[0];
+  $("#mail").href="mailto:admin@lcmbgroup.com.au?subject="+encodeURIComponent("Proposal accepted – 18 Hillstone Crescent")+"&body="+encodeURIComponent(txt);
+  const btn=$("#go"); if(btn.disabled) return; btn.disabled=true; btn.textContent="Sending…";
+  const payload={customer:document.title.replace(/^.*proposal for /i,""),name:nm,phone:ph,
+    address:txt.split("\n")[0].replace(/^Proposal accepted – /,""),option:`Option ${cur} – ${o.cap}`,price:fmt(o.price),
+    extras:ex.length?ex.map(a=>a.t+(a.p?` (${fmt(a.p)})`:" (TBC)")).join(", "):"None",
+    total:$("#sTot").textContent+" inc GST, after rebates",page:location.href.split("#")[0].split("?")[0]};
+  (window.lcmbSendAccept?window.lcmbSendAccept(payload):Promise.resolve(false)).then(ok=>{
+    $("#doneLead").textContent=ok?"Luke has your acceptance and will be in touch shortly to book your site inspection."
+      :"Nearly done. Please tap “Email it to Luke” below so he gets your acceptance, or call him on 0483 927 024.";
+    $("#doneBtns").style.display=ok?"none":"flex";
+    $("#acceptForm").style.display="none"; $("#done").style.display="block";
+    $("#done").scrollIntoView({behavior:"smooth",block:"center"});
+  });
+};
+$("#copy").onclick=async()=>{ try{ await navigator.clipboard.writeText($("#conf").textContent); $("#copy").textContent="Copied ✓"; }catch(e){ $("#copy").textContent="Select the text above to copy"; } };
+renderApps(); renderAddons(); setOpt(2);
+</script>
+<script src="../assets/accept.js?v=12"></script>
+<script src="../assets/brand.js?v=3"></script>
+<script src="../assets/book-cta.js?v=1"></script>
+<script src="../assets/rebate-notice.js?v=3"></script>
+<script src="../assets/track.js"></script>
+<script src="../assets/fx.js"></script>
+<script src="../assets/finance.js?v=2"></script>
+<script src="../assets/pdf.js"></script>
+</body>
+</html>
