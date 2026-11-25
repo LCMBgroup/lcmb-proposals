@@ -35,6 +35,11 @@ window.LCMB_AC = {
       "text": "I had Luke and Hayden help me to get a solar battery and ducted installed. The guys were awesome! Friendly, quick, efficient and great customer service.\nTheir team stuck around afterwards to help me get my head around the apps for both the battery and ducted which I needed a bit of help with.\nWhile they weren't the cheapest option I was quoted, I felt as though they actually listened to what I was after, then they also gave their professional opinion. I'd definitely recommend them to anyone"
     },
     {
+      "name": "Gary W.",
+      "job": "Air con",
+      "text": "Absolutely top-notch service . Dealt with the options didn't try to upsell me something I didn't need Very easy to deal with . Will be telling others . Hayden and Lochie are to be congratulated . Thanks again"
+    },
+    {
       "name": "Teneille F.",
       "job": "Ducted air con",
       "text": "We recently had LCMB Group quote us for a ducted air conditioning system on 22/09. After carefully reviewing all quotes and requesting some clarifications and additions on 11/10, we confirmed we were ready to proceed on 12/10 and paid the deposit as agreed. By 23/10, the entire system was installed—in just 8 hours!\n\nThe team of four on site were exceptional. They kept me informed throughout the process, explaining what was going where and how it would work. They were respectful, efficient, and incredibly tidy—leaving the space spotless after the install. I couldn’t be happier with the quality of their work and the professionalism they showed.\n\nThey also did a fantastic job walking me through how to use the system at the end—clear, patient, and thorough, which gave me full confidence in operating everything smoothly.\n\nBonus points for their sweet interactions with our two puppies—every time they came into the lounge room, they gave them a little love and attention, which was just the cherry on top 😂.\n\nHighly recommend LCMB Group for anyone looking for a seamless, well-communicated, and expertly executed aircon installation. Job very well done!"
